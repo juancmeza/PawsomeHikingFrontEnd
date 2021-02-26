@@ -2,22 +2,30 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  
+  const fetchTest = () => {
+    fetch('http://localhost:3000/api/v1/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        user: {
+          username: "jcmt",
+          
+
+        }
+      })
+      })
+      .then(r => r.json())
+      .then(console.log)
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div>Test</div>
+      <div>Test2</div>
     </div>
   );
 }
