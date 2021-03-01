@@ -12,7 +12,8 @@ function App() {
       },
       body: JSON.stringify({
         user: {
-          username: "jcmt",
+          username: "test2",
+          password: "123"
           
 
         }
@@ -24,8 +25,37 @@ function App() {
   
   return (
     <div className="App">
-        <div>Test</div>
+      <div>Test</div>
       <div>Test2</div>
+      <form onSubmit={() => this.fetchTest()}>
+        <label>
+          <input
+            className="form-control form-control-lg"
+            type="text"
+            placeholder="username"
+            id="username"
+            name="username"
+          />{" "}
+          <br />
+        </label>
+
+        <label>
+          <input
+            className="form-control form-control-lg"
+            type="password"
+            placeholder="password"
+            id="password"
+            name="password"
+          />{" "}
+          <br />
+        </label>
+        <button
+          className="btn btn-outline-light btn-block"
+          type="submit"
+        >
+          Sign up
+        </button>
+      </form>
     </div>
   );
 }
