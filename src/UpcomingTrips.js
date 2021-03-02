@@ -1,5 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
+import { Container, Row, Col, Button, Form, Alert} from "react-bootstrap"
+import SimpleReactCalendar from 'simple-react-calendar'
 import {
     BrowserRouter as Router,
     Route,
@@ -14,7 +16,11 @@ class UpcomingTrips extends Component {
         return(
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
-                <h5>You have reached the Upcoming Trips Component</h5>
+                <Row>
+                        <Col>
+                            <SimpleReactCalendar daysOfWeek={['Monday']}/>
+                        </Col>
+                </Row>
             </div>
         )
     }

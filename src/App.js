@@ -21,7 +21,8 @@ class App extends Component {
   state = {
 
     user: {},
-    loggedIn: false
+    loggedIn: false,
+    trips: []
 
   }
 
@@ -31,30 +32,24 @@ class App extends Component {
     const token = localStorage.token;
     if (token) {
       this.persistUser(token);
-
-    
-    // if (localStorage.token){
-    //   fetch('http://localhost:3000/api/v1/persist',{
-    //     method: "GET",
-    //     headers: {
-    //     Authorization: `Bearer ${localStorage.token}`
-    //     }
-    //     }
-    //   )
-
-    // }
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     if (res.username){
-    //       const {username, id} = res;
-    //       this.setState({
-    //         username: username
-    //       })
-    //     }
-    //   })
-      
-    // }
+      this.getTrips(token);
+      console.log(this.state.trips)
    }
+ }
+
+ getTrips = (token) => {
+  fetch(API + "/persist", {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  .then((resp) => resp.json())
+  .then((data) => {
+    this.setState({
+      trips: data
+    })
+  })
  }
 
  persistUser = (token) => {
