@@ -2,6 +2,11 @@ import React, {Component, Fragment} from 'react';
 import './App.css';
 import Login from "./Login.js";
 import Home from "./Home.js";
+import UpcomingTrips from "./UpcomingTrips.js";
+import Friends from "./Friends.js";
+import Profile from "./Profile.js";
+import "bootstrap/dist/css/bootstrap.css";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -195,6 +200,27 @@ class App extends Component {
             <Route exact path='/'>
             {this.state.loggedIn?
             <Home handleLogout={this.handleLogout}/>
+            :
+            <Login handleLoginOrSignup={this.handleLogin}/>
+            }
+            </Route>
+            <Route path='/upcomingTrips'>
+            {this.state.loggedIn?
+            <UpcomingTrips handleLogout={this.handleLogout}/>
+            :
+            <Login handleLoginOrSignup={this.handleLogin}/>
+            }
+            </Route>
+            <Route path='/profile'>
+            {this.state.loggedIn?
+            <Profile handleLogout={this.handleLogout}/>
+            :
+            <Login handleLoginOrSignup={this.handleLogin}/>
+            }
+            </Route>
+            <Route path='/friends'>
+            {this.state.loggedIn?
+            <Friends handleLogout={this.handleLogout}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }

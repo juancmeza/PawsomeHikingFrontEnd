@@ -21,11 +21,11 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(6, 25, 36);
 }
 
 .App-link {
-  color: #61dafb;
+  color: #08181d;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +35,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #268397;
+  color: white;
+}
+
+.navbar {
+  height: 65px;
+}
+
+.NavStuff {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  list-style: none;
 }
