@@ -25,19 +25,13 @@ class Home extends Component {
                     </Row>
                     <Row>
                         <Col>
-                            <div></div>
+                            <div>Date: {this.props.nextTrip.date}</div>
                         </Col>
                         <Col>
-                            <div>Date:</div>
+                            <div>Location: {this.props.nextTrip.location}</div>
                         </Col>
                         <Col>
-                            <div>Location:</div>
-                        </Col>
-                        <Col>
-                            <div>Time:</div>
-                        </Col>
-                        <Col>
-                            <div></div>
+                            <div>Time: {this.props.nextTrip.time}</div>
                         </Col>
                     </Row>
                 </Container>

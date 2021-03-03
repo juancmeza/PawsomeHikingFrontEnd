@@ -27,25 +27,25 @@ class App extends Component {
   }
 
 
-
   componentDidMount(){
     const token = localStorage.token;
+    this.getTrips();
     if (token) {
       this.persistUser(token);
-      this.getTrips(token);
-      console.log(this.state.trips)
+
    }
  }
 
- getTrips = (token) => {
-  fetch(API + "/persist", {
+
+ getTrips = () => {
+  fetch(API + "/trips", {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${token}`,
-    },
+      "Content-Type": "application/json", },
   })
   .then((resp) => resp.json())
   .then((data) => {
+    console.log(data)
     this.setState({
       trips: data
     })
@@ -95,7 +95,6 @@ class App extends Component {
 
   
   handleLogin = (e, userInfo) => {
-    debugger
     e.preventDefault();
     fetch(API + "/login", {
       method: "POST",
@@ -132,60 +131,6 @@ class App extends Component {
     });
   };
 
-    
-  
-  // handleLogin = () => {
-  //   fetch('http://localhost:3000/api/v1/login', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       Accept: 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //       user: {
-  //         username: this.state.username,
-  //         password: this.state.password
-  //       }
-  //     })
-  //     })
-  //     .then(res => res.json())
-  //     .then((res) => {
-  //       console.log(res);
-  //       localStorage.setItem('token', res.jwt)
-  //       this.setState({login: true,
-  //         username: this.state.username,
-  //         password: this.state.password
-  //       })
-  //     })
-
-  // }
-
-  // handleSignUp = () => {
-  //   fetch('http://localhost:3000/api/v1/users', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       Accept: 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //       user: {
-  //         username: this.state.username,
-  //         password: this.state.password
-  //       }
-  //     })
-  //     })
-  //     .then(res => res.json())
-  //     .then((res) => {
-  //       console.log(res);
-  //       localStorage.setItem('token', res.jwt)
-  //       this.setState({login: true,
-  //         username: this.state.username,
-  //         password: this.state.password
-  //       })
-  //       this.setState({login: true})
-  //     })
-
-  // }
 
   render(){
     return (
@@ -194,14 +139,14 @@ class App extends Component {
           <Switch>
             <Route exact path='/'>
             {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout}/>
+            <Home handleLogout={this.handleLogout} nextTrip={this.state.trips[0]}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
             </Route>
             <Route path='/upcomingTrips'>
             {this.state.loggedIn?
-            <UpcomingTrips handleLogout={this.handleLogout}/>
+            <UpcomingTrips handleLogout={this.handleLogout} allTrips={this.state.trips}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
