@@ -34,6 +34,15 @@ class Home extends Component {
                             <div>Time: {this.props.nextTrip.time}</div>
                         </Col>
                     </Row>
+                    <br></br>
+                    <Row>
+                        <Col>
+                            <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-beach-and-dogs.jpg'/>
+                        </Col>
+                        <Col>
+                            <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
         )

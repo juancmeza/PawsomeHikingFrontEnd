@@ -5,6 +5,8 @@ import Home from "./Home.js";
 import UpcomingTrips from "./UpcomingTrips.js";
 import Friends from "./Friends.js";
 import Profile from "./Profile.js";
+import BookTrip from "./BookTrip.js";
+
 import "bootstrap/dist/css/bootstrap.css";
 
 import {
@@ -161,6 +163,13 @@ class App extends Component {
             <Route path='/friends'>
             {this.state.loggedIn?
             <Friends handleLogout={this.handleLogout}/>
+            :
+            <Login handleLoginOrSignup={this.handleLogin}/>
+            }
+            </Route>
+            <Route path='/bookTrip'>
+            {this.state.loggedIn?
+            <BookTrip handleLogout={this.handleLogout}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
