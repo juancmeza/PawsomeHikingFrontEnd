@@ -43,7 +43,8 @@ class App extends Component {
   fetch(API + "/trips", {
     method: "GET",
     headers: {
-      "Content-Type": "application/json", },
+      "Content-Type": "application/json", 
+    },
   })
   .then((resp) => resp.json())
   .then((data) => {

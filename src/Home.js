@@ -5,6 +5,7 @@ import SimpleReactCalendar from 'simple-react-calendar'
 import {
     BrowserRouter as Router,
     Route,
+    Link,
     Redirect,
     Switch,
   } from "react-router-dom";
@@ -19,9 +20,9 @@ class Home extends Component {
                 <br></br>
                 <Container>
                     <Row>
-                        <Col>
-                            <h5>Next Trip:</h5>
-                        </Col>
+                      <Col>
+                          <h5>Next Trip:</h5>
+                      </Col>
                     </Row>
                     <Row>
                         <Col>
@@ -42,6 +43,14 @@ class Home extends Component {
                         <Col>
                             <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>
                         </Col>
+                    </Row>
+                    <br></br>
+                    <Row>
+                      <Col>
+                        <Link to="/bookTrip">
+                          <h5 className = "text-white nav-text"> Sign my puppy up! </h5>
+                        </Link>
+                      </Col>
                     </Row>
                 </Container>
             </div>
