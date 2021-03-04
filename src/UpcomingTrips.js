@@ -20,7 +20,7 @@ class UpcomingTrips extends Component {
         <Col>{date}</Col>
         <Col>{location}</Col>
         <Col>{time}</Col>
-        <Col><Button>Book Trip!</Button></Col>
+        <Col><Button id={id}>Book Trip!</Button></Col>
       </Row>
       )
     })

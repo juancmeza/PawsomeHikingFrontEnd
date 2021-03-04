@@ -64,7 +64,7 @@ class BookTrip extends Component {
                     <div></div>
                   </Col>
                   <Col>
-                    <Checkboxes />
+                    <Checkboxes user={this.props.user}/>
                   </Col>
                   <Col>
                     <div></div>

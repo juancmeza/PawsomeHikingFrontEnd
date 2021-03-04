@@ -8,14 +8,25 @@ import PetsOutlinedIcon from '@material-ui/icons/PetsOutlined';
 import PetsIcon from '@material-ui/icons/Pets';
 
 export default function CheckboxLabels() {
+
+  const userDogs = this.props.user.dogs
+
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
     checkedF: true,
+    selected: [],
+    userDogs: userDogs
   });
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
+    const selectedDogs = () => {
+      const sel = []
+      
+    }  
+    // setState({...state, selected: })
+    console.log('hi')
   };
 
   return (
