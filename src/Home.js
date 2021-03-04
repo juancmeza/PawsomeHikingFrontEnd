@@ -48,7 +48,7 @@ class Home extends Component {
                     <Row>
                       <Col>
                         <Link to="/bookTrip">
-                          <h5 className = "text-white nav-text"> Sign my puppy up! </h5>
+                          <h5> Sign my puppy up! </h5>
                         </Link>
                       </Col>
                     </Row>

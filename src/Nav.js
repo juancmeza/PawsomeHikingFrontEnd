@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import './App.css';
 import { Link } from 'react-router-dom';
+import Button from "react-bootstrap/Button";
+
 
 class Nav extends Component {
   render() {
@@ -21,7 +23,7 @@ class Nav extends Component {
             <h5 className = "text-white nav-text"> Profile </h5>
           </Link>
           <div>
-              <button onClick={this.props.handleLogout}>logout</button>
+              <Button variant='light' onClick={this.props.handleLogout}>logout</Button>
           </div>
         </div>
       </nav>

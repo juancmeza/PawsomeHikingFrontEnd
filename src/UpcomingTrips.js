@@ -12,16 +12,34 @@ import {
 
 class UpcomingTrips extends Component {
 
+  showAllTrips = () => {
+    return this.props.allTrips.map(trip => {
+      const {id, date, location, time} = trip
+      return (
+      <Row>
+        <Col>{date}</Col>
+        <Col>{location}</Col>
+        <Col>{time}</Col>
+        <Col><Button>Book Trip!</Button></Col>
+      </Row>
+      )
+    })
+  }
+
     render(){
         return(
+          <div>
+            <Nav handleLogout={this.props.handleLogout}/>
+            <Row>
+              <Col>
+                  <SimpleReactCalendar trips={this.props.allTrips}/>
+              </Col>
+            </Row>
+            <br></br>
             <div>
-                <Nav handleLogout={this.props.handleLogout}/>
-                <Row>
-                        <Col>
-                            <SimpleReactCalendar trips={this.props.allTrips}/>
-                        </Col>
-                </Row>
+              {this.showAllTrips()}
             </div>
+          </div>
         )
     }
 }

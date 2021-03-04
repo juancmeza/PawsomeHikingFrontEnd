@@ -70,6 +70,11 @@ class BookTrip extends Component {
                     <div></div>
                   </Col>
                 </Row>
+                <Row>
+                  <Col>
+                    <Button variant='outline-dark'>Book Trip!</Button>
+                  </Col>
+                </Row>
             </div>
 
         )
