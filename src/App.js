@@ -65,7 +65,7 @@ class App extends Component {
     .then((resp) => resp.json())
     .then((data) => {
       if (data.username) {
-        const { username, id } = data;
+        const { username, id} = data;
         this.setState({
           user: {
             username,
@@ -79,12 +79,11 @@ class App extends Component {
 
   handleAuthResponse = (data) => {
     if (data.username) {
-      const { username, id, token, dogs } = data;
+      const { username, id, token } = data;
       this.setState({
         user: {
           username,
           id,
-          dogs
         },
         error: null,
         loggedIn: true,
@@ -151,7 +150,7 @@ class App extends Component {
             </Route>
             <Route path='/upcomingTrips'>
             {this.state.loggedIn?
-            <UpcomingTrips handleLogout={this.handleLogout} allTrips={this.state.trips} user = {this.state.user}/>
+            <UpcomingTrips handleLogout={this.handleLogout} allTrips={this.state.trips} user={this.state.user}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -7,16 +7,37 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import PetsOutlinedIcon from '@material-ui/icons/PetsOutlined';
 import PetsIcon from '@material-ui/icons/Pets';
 
-export default function CheckboxLabels() {
+export default function CheckboxLabels({user}) {
 
-  const userDogs = this.props.user.dogs
+  const API = 'http://localhost:3000/users'
 
-  const [state, setState] = React.useState({
+  useEffect(() => {
+    userDogs(user.id)
+  })
+
+  const userDogs = (id) => {
+    fetch(API + `/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json", 
+      },
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log(data)
+      setState({
+        profile: data
+      })
+    })
+  }
+
+  const [state, setState] = useState({
     checkedA: true,
     checkedB: true,
     checkedF: true,
     selected: [],
-    userDogs: userDogs
+    // userDogs: userDogs,
+    profile: {}
   });
 
   const handleChange = (event) => {
@@ -26,7 +47,7 @@ export default function CheckboxLabels() {
       
     }  
     // setState({...state, selected: })
-    console.log('hi')
+    console.log(state)
   };
 
   return (
