@@ -22,21 +22,22 @@ class App extends Component {
 
   state = {
 
-    user: {},
+    user: null,
     loggedIn: false,
     trips: []
 
   }
 
 
-  componentDidMount(){
-    const token = localStorage.token;
-    this.getTrips();
-    if (token) {
-      this.persistUser(token);
+//   componentDidMount(){
+//     this.getTrips();
+//     if (!this.state.user){
+//       if (localStorage.token) {
+//         this.persistUser();
 
-   }
- }
+//    }
+//   }
+//  }
 
 
  getTrips = () => {
@@ -55,11 +56,11 @@ class App extends Component {
   })
  }
 
- persistUser = (token) => {
+ persistUser = () => {
   fetch(API + "/persist", {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${localStorage.token}`,
     },
   })
     .then((resp) => resp.json())
@@ -98,8 +99,7 @@ class App extends Component {
   };
 
   
-  handleLogin = (e, userInfo) => {
-    e.preventDefault();
+  handleLogin = (userInfo) => {
     fetch(API + "/login", {
       method: "POST",
       headers: {
@@ -111,8 +111,7 @@ class App extends Component {
       .then((data) => this.handleAuthResponse(data))
       .catch(console.log);
   };
-  handleSignup = (e, userInfo) => {
-    e.preventDefault();
+  handleSignup = (userInfo) => {
     fetch(API + "/sign_up", {
       method: "POST",
       headers: {

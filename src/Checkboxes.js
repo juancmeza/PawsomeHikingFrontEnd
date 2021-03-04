@@ -7,29 +7,14 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import PetsOutlinedIcon from '@material-ui/icons/PetsOutlined';
 import PetsIcon from '@material-ui/icons/Pets';
 
-export default function CheckboxLabels({user}) {
+export default function CheckboxLabels({user, userDogs}) {
 
-  const API = 'http://localhost:3000/users'
+  // const API = 'http://localhost:3000/users'
 
-  useEffect(() => {
-    userDogs(user.id)
-  })
+  // useEffect(() => {
+  //   userDogs(user.id)
+  // })
 
-  const userDogs = (id) => {
-    fetch(API + `/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json", 
-      },
-    })
-    .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data)
-      setState({
-        profile: data
-      })
-    })
-  }
 
   const [state, setState] = useState({
     checkedA: true,

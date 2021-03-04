@@ -7,14 +7,37 @@ import Checkboxes from './Checkboxes';
 
 import {
     BrowserRouter as Router,
-    Route,
     Redirect,
-    Switch,
   } from "react-router-dom";
+
+const API = 'http://localhost:3000/users'
 
 
 class BookTrip extends Component {
 
+  state = {
+    userDogs: []
+  }
+
+  componentDidMount(){
+    this.getUserDogs(this.props.user.id)
+  }
+
+  getUserDogs = (id) => {
+    fetch(API + `/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json", 
+      },
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log(data)
+      this.setState({
+        userDogs: data.dogs
+      })
+    })
+  }
 
     render(){
 
@@ -64,7 +87,7 @@ class BookTrip extends Component {
                     <div></div>
                   </Col>
                   <Col>
-                    <Checkboxes user={this.props.user}/>
+                    <Checkboxes user={this.props.user} userDogs={this.state.userDogs}/>
                   </Col>
                   <Col>
                     <div></div>
