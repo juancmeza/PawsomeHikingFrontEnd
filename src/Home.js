@@ -38,7 +38,7 @@ class Home extends Component {
                     <br></br>
                     <Row>
                         <Col>
-                            <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-beach-and-dogs.jpg'/>
+                        <img src='https://www.tideschart.com/maps/en/Fort-Funston-Beach-United-States-tides-map.png'/>
                         </Col>
                         <Col>
                             <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>

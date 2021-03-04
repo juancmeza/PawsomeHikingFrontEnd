@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Container } from "react-bootstrap";
+import { Form, Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 class Login extends React.Component {
   state = {
@@ -16,6 +16,11 @@ class Login extends React.Component {
     return (
       <div>
         <Container>
+          <Row>
+            <Col>
+            <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-beach-and-dogs.jpg'/>
+            </Col>
+          </Row>
           <Form
             onSubmit={(e) => {
               this.props.handleLoginOrSignup(e, this.state);

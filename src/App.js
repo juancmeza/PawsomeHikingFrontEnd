@@ -65,10 +65,11 @@ class App extends Component {
     .then((resp) => resp.json())
     .then((data) => {
       if (data.username) {
-        const { username } = data;
+        const { username, id } = data;
         this.setState({
           user: {
             username,
+            id
           },
           loggedIn: true,
         });
@@ -170,7 +171,7 @@ class App extends Component {
             </Route>
             <Route path='/bookTrip'>
             {this.state.loggedIn?
-            <BookTrip handleLogout={this.handleLogout}/>
+            <BookTrip handleLogout={this.handleLogout} allTrips={this.state.trips}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
