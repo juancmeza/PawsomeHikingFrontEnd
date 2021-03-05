@@ -15,36 +15,27 @@ const API = 'http://localhost:3000'
 class UpcomingTrips extends Component {
 
   
-  componentDidMount() {
-    this.getUserTrips(this.props.user.id)
+  state ={
+    myTrips: false,
+    bookTrip: true
   }
-  
-  getUserTrips = (id) => {
-    fetch(API + `/users/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.token}` 
-      },
-    })
-    .then((resp) => resp.json())
-    .then((data) => {
-      // console.log(data)
-      this.setState({
-        userDogs: data.trips
-      })
+
+  showMyTrips = () => {
+    return this.props.user.trips.map(trip => {
+
+      return 
     })
   }
 
-  showAllTrips = () => {
-    return this.props.allTrips.map(trip => {
+  showTrips = (trips) => {
+    return trips.map(trip => {
       const {id, date, location, time} = trip
       return (
       <Row>
         <Col>{date}</Col>
         <Col>{location}</Col>
         <Col>{time}</Col>
-        <Col><Button id={id}>Book Trip!</Button></Col>
+        <Col><Button variant='outline-info'>Book Trip!</Button></Col>
       </Row>
       )
     })
@@ -61,7 +52,7 @@ class UpcomingTrips extends Component {
             </Row>
             <br></br>
             <div>
-              {this.showAllTrips()}
+              {this.state.myTrips ? this.showTrips(this.props.user.trips) : this.showTrips(this.props.allTrips)}
             </div>
           </div>
         )

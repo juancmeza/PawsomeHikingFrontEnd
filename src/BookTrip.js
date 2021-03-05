@@ -16,30 +16,29 @@ const API = 'http://localhost:3000'
 class BookTrip extends Component {
 
   state = {
-    userDogs: [],
     selectedDogs: []
   }
 
-  componentDidMount(){
-    this.getUserDogs(this.props.user.id)
-  }
+  // componentDidMount(){
+  //   this.getUserDogs(this.props.user.id)
+  // }
 
-  getUserDogs = (id) => {
-    fetch(API + `/users/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.token}` 
-      },
-    })
-    .then((resp) => resp.json())
-    .then((data) => {
-      // console.log(data)
-      this.setState({
-        userDogs: data.dogs
-      })
-    })
-  }
+  // getUserDogs = (id) => {
+  //   fetch(API + `/users/${id}`, {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       "Authorization": `Bearer ${localStorage.token}` 
+  //     },
+  //   })
+  //   .then((resp) => resp.json())
+  //   .then((data) => {
+  //     // console.log(data)
+  //     this.setState({
+  //       userDogs: data.dogs
+  //     })
+  //   })
+  // }
 
     updateSelectedDogs = (dog) => {
       if (this.state.selectedDogs.includes(dog)){
@@ -53,8 +52,7 @@ class BookTrip extends Component {
     }
 
     createCheckBoxes = () => {
-      return (this.state.userDogs.map(dog => {
-        // console.log(dog)
+      return (this.props.user.dogs.map(dog => {
         return (
             <DogCheckbox user={this.props.user} dog={dog} updateSelectedDogs={() => this.updateSelectedDogs(dog)}/>
         )

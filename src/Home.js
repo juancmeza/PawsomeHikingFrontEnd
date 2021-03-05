@@ -28,8 +28,7 @@ class Home extends Component {
   }
 
     render(){
-
-      const {date, location, time} = this.props.chosenTrip
+        const {date, location, time} = this.props.chosenTrip
 
         return(
             <div>

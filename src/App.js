@@ -24,15 +24,19 @@ class App extends Component {
 
     user: null,
     loggedIn: false,
-    trips: [],
-    selectedTrip: false
+    selectedTrip: {
+      date: null,
+      location: null,
+      time: null
+    },
+    trips: []
 
   }
 
 
   componentDidMount(){
-    this.getTrips();
     if (!this.state.user){
+      this.getTrips()
       if (localStorage.token) {
         this.persistUser();
 
@@ -52,7 +56,8 @@ class App extends Component {
   .then((data) => {
     console.log(data)
     this.setState({
-      trips: data
+      trips: data,
+      selectedTrip: data[0]
     })
   })
  }
@@ -66,13 +71,10 @@ class App extends Component {
   })
     .then((resp) => resp.json())
     .then((data) => {
-      if (data.username) {
-        const { username, id} = data;
+      if (data.user) {
+        // const { username, id} = data;
         this.setState({
-          user: {
-            username,
-            id
-          },
+          user: data.user,
           loggedIn: true,
         });
       }
@@ -80,13 +82,10 @@ class App extends Component {
   }
 
   handleAuthResponse = (data) => {
-    if (data.username) {
-      const { username, id, token } = data;
+    if (data.user.username) {
+      const { token } = data;
       this.setState({
-        user: {
-          username,
-          id,
-        },
+        user: data.user,
         error: null,
         loggedIn: true,
       });
@@ -143,7 +142,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/'>
             {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout} chosenTrip={this.state.selectedTrip ? this.state.selectedTrip : this.state.trips[0]} user={this.state.user}/>
+            <Home handleLogout={this.handleLogout} chosenTrip={this.state.selectedTrip} user={this.state.user}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
