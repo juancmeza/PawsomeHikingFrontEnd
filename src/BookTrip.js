@@ -34,7 +34,7 @@ class BookTrip extends Component {
     })
     .then((resp) => resp.json())
     .then((data) => {
-      console.log(data)
+      // console.log(data)
       this.setState({
         userDogs: data.dogs
       })
@@ -49,13 +49,14 @@ class BookTrip extends Component {
         const addingDog = [...this.state.selectedDogs, dog]
         this.setState({selectedDogs: addingDog})
       }
+      console.log(this.state.selectedDogs)
     }
 
     createCheckBoxes = () => {
       return (this.state.userDogs.map(dog => {
-        console.log(dog)
+        // console.log(dog)
         return (
-            <DogCheckbox user={this.props.user} dog={dog} updateDogState={() => this.updateSelectedDogs(dog)}/>
+            <DogCheckbox user={this.props.user} dog={dog} updateSelectedDogs={() => this.updateSelectedDogs(dog)}/>
         )
       }))
     }

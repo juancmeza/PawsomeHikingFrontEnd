@@ -6,25 +6,25 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import PetsOutlinedIcon from '@material-ui/icons/PetsOutlined';
 import PetsIcon from '@material-ui/icons/Pets';
 
-export default function DogCheckbox({user, dog, updateDogState}) {
+export default function DogCheckbox({dog, updateSelectedDogs}) {
 
   // useEffect(() => {
   //   console.log(dog)
   // })
 
-  const [state, setState] = useState({
-    selected: [],
-    // userDogs: userDogs,
-  });
+  // const [state, setState] = useState({
+  //   selected: [],
+  //   // userDogs: userDogs,
+  // });
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: !event.target.checked });
+  // const handleChange = (event) => {
+  //   setState({ ...state, [event.target.name]: !event.target.checked });
     // const selectedDogs = () => {
     //   const sel = []
       
     // }  
-    console.log(state, dog.name)
-  };
+    // console.log(state, dog.name)
+  // };
 
   return (
       <FormControlLabel
@@ -32,8 +32,8 @@ export default function DogCheckbox({user, dog, updateDogState}) {
           <Checkbox
             icon={<PetsIcon />}
             checkedIcon={<PetsOutlinedIcon />}
-            checked={state.checkedA}
-            onChange={handleChange}
+            // checked={state.checkedA}
+            onChange={() => updateSelectedDogs(dog)}
             name={dog.name}
             color="primary"
           />
