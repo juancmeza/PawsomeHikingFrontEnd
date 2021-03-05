@@ -9,8 +9,32 @@ import {
     Switch,
   } from "react-router-dom";
 
+const API = 'http://localhost:3000'
+
 
 class UpcomingTrips extends Component {
+
+  
+  componentDidMount() {
+    this.getUserTrips(this.props.user.id)
+  }
+  
+  getUserTrips = (id) => {
+    fetch(API + `/users/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.token}` 
+      },
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+      // console.log(data)
+      this.setState({
+        userDogs: data.trips
+      })
+    })
+  }
 
   showAllTrips = () => {
     return this.props.allTrips.map(trip => {
