@@ -18,8 +18,13 @@ class Home extends Component {
     booking: false
   }
 
+  // componentDidMount() {
+  //   this.setState({booking: false})
+  // }
+
   toggleBooking = () => {
-    this.setState(prevState => ({booking: !prevState}))
+    const update = !this.state.booking
+    this.setState({booking: update})
   }
 
     render(){
@@ -32,7 +37,7 @@ class Home extends Component {
                 <br></br>
                 <div>
                   {this.state.booking ? 
-                  <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user} toggleBooking={this.toggleBooking} handleLogout={this.props.handleLogout} /> : 
+                  <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user} toggleBooking={this.toggleBooking} handleLogout={this.props.handleLogout} toggleBooking={this.toggleBooking}/> : 
                   <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} toggleBooking={this.toggleBooking} handleLogout={this.props.handleLogout} toggleBooking={this.toggleBooking}/>}
                 </div>
             </div>

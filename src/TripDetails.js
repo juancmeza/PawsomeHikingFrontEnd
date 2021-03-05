@@ -52,7 +52,7 @@ class TripDetails extends Component {
                     <br></br>
                     <Row>
                       <Col>
-                          <Button variant='outline-info'>Sign my puppy up!</Button>
+                          <Button variant='outline-info' onClick={this.props.toggleBooking()}>Sign my puppy up!</Button>
                       </Col>
                     </Row>
                     <br></br>

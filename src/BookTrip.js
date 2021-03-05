@@ -11,7 +11,7 @@ import {
     Redirect,
   } from "react-router-dom";
 
-const API = 'http://localhost:3000/users'
+const API = 'http://localhost:3000'
 
 class BookTrip extends Component {
 
@@ -25,7 +25,7 @@ class BookTrip extends Component {
   }
 
   getUserDogs = (id) => {
-    fetch(API + `/${id}`, {
+    fetch(API + `/users/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -61,14 +61,48 @@ class BookTrip extends Component {
       }))
     }
 
+    bookTrip = () => {
+      this.state.selectedDogs.map(dog => {
+        
+        let newTrip = {
+          dog_trip: {
+            dog_id: dog.id,
+            trip_id: this.props.chosenTrip.id
+          }
+        } 
+
+        fetch(API + "/dog_trips", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.token}` 
+          },
+          body: JSON.stringify(newTrip)
+        })
+        .then(res => res.json())
+        .then(console.log)
+      })
+    }
+
+  //   fetch("http://localhost:3000/user_locations", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(newUserLocation),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((userloc) => {
+  //       console.log(userloc);
+  //     });
+  // };
+
     render(){
 
-      const {location, date, time} = this.props.allTrips[0]
+      const {location, date, time} = this.props.chosenTrip
 
         return(
             <div>
-                <Nav handleLogout={this.props.handleLogout}/>
-                <br></br>
                 <Row>
                   <Col>
                     <div>
@@ -118,7 +152,7 @@ class BookTrip extends Component {
                 </Row>
                 <Row>
                   <Col>
-                    <Button variant='outline-dark'>Book Trip!</Button>
+                    <Button variant='outline-info' onClick={() => this.bookTrip()}>Book Trip!</Button>
                   </Col>
                 </Row>
             </div>
