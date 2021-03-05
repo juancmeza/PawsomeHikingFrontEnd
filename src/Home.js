@@ -1,7 +1,8 @@
 import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
 import { Container, Row, Col, Button, Form, Alert} from "react-bootstrap"
-import SimpleReactCalendar from 'simple-react-calendar'
+import TripDetails from './TripDetails.js'
+import BookTrip from './BookTrip.js'
 import {
     BrowserRouter as Router,
     Route,
@@ -13,46 +14,27 @@ import {
 
 class Home extends Component {
 
+  state = {
+    booking: false
+  }
+
+  toggleBooking = () => {
+    this.setState(prevState => ({booking: !prevState}))
+  }
+
     render(){
+
+      const {date, location, time} = this.props.chosenTrip
+
         return(
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
                 <br></br>
-                <Container>
-                    <Row>
-                      <Col>
-                          <h5>Next Trip:</h5>
-                      </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <div>Date: {this.props.nextTrip.date}</div>
-                        </Col>
-                        <Col>
-                            <div>Location: {this.props.nextTrip.location}</div>
-                        </Col>
-                        <Col>
-                            <div>Time: {this.props.nextTrip.time}</div>
-                        </Col>
-                    </Row>
-                    <br></br>
-                    <Row>
-                        <Col>
-                        <img src='https://www.tideschart.com/maps/en/Fort-Funston-Beach-United-States-tides-map.png'/>
-                        </Col>
-                        <Col>
-                            <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>
-                        </Col>
-                    </Row>
-                    <br></br>
-                    <Row>
-                      <Col>
-                        <Link to="/bookTrip">
-                          <h5> Sign my puppy up! </h5>
-                        </Link>
-                      </Col>
-                    </Row>
-                </Container>
+                <div>
+                  {this.state.booking ? 
+                  <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user} toggleBooking={this.toggleBooking} handleLogout={this.props.handleLogout} /> : 
+                  <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} toggleBooking={this.toggleBooking} handleLogout={this.props.handleLogout} toggleBooking={this.toggleBooking}/>}
+                </div>
             </div>
         )
     }

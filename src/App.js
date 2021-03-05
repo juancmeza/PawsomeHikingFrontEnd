@@ -24,7 +24,8 @@ class App extends Component {
 
     user: null,
     loggedIn: false,
-    trips: []
+    trips: [],
+    selectedTrip: false
 
   }
 
@@ -142,7 +143,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/'>
             {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout} nextTrip={this.state.trips[0]}/>
+            <Home handleLogout={this.handleLogout} chosenTrip={this.state.selectedTrip ? this.state.selectedTrip : this.state.trips[0]} user={this.state.user}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
@@ -168,13 +169,13 @@ class App extends Component {
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
             </Route>
-            <Route path='/bookTrip'>
+            {/* <Route path='/bookTrip'>
             {this.state.loggedIn?
             <BookTrip handleLogout={this.handleLogout} allTrips={this.state.trips} user={this.state.user}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
-            </Route>
+            </Route> */}
           </Switch>
         </Router>
       </div>
