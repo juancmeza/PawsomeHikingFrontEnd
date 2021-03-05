@@ -20,13 +20,6 @@ class UpcomingTrips extends Component {
     bookTrip: true
   }
 
-  showMyTrips = () => {
-    return this.props.user.trips.map(trip => {
-
-      return 
-    })
-  }
-
   showTrips = (trips) => {
     return trips.map(trip => {
       const {id, date, location, time} = trip
