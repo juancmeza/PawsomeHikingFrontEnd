@@ -29,15 +29,15 @@ class App extends Component {
   }
 
 
-//   componentDidMount(){
-//     this.getTrips();
-//     if (!this.state.user){
-//       if (localStorage.token) {
-//         this.persistUser();
+  componentDidMount(){
+    this.getTrips();
+    if (!this.state.user){
+      if (localStorage.token) {
+        this.persistUser();
 
-//    }
-//   }
-//  }
+   }
+  }
+ }
 
 
  getTrips = () => {

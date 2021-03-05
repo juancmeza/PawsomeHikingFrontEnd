@@ -2,7 +2,8 @@ import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
 import { Container, Row, Col, Button, Form, Alert} from "react-bootstrap"
 import SimpleReactCalendar from 'simple-react-calendar'
-import Checkboxes from './Checkboxes';
+import FormGroup from '@material-ui/core/FormGroup';
+import DogCheckbox from './DogCheckbox.js';
 
 
 import {
@@ -12,11 +13,11 @@ import {
 
 const API = 'http://localhost:3000/users'
 
-
 class BookTrip extends Component {
 
   state = {
-    userDogs: []
+    userDogs: [],
+    selectedDogs: []
   }
 
   componentDidMount(){
@@ -27,7 +28,8 @@ class BookTrip extends Component {
     fetch(API + `/${id}`, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json", 
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.token}` 
       },
     })
     .then((resp) => resp.json())
@@ -38,6 +40,25 @@ class BookTrip extends Component {
       })
     })
   }
+
+    updateSelectedDogs = (dog) => {
+      if (this.state.selectedDogs.includes(dog)){
+        const removingDog = [...this.state.selectedDogs].filter(includedDog => includedDog.id !== dog.id)
+        this.setState({selectedDogs: removingDog})
+      } else {
+        const addingDog = [...this.state.selectedDogs, dog]
+        this.setState({selectedDogs: addingDog})
+      }
+    }
+
+    createCheckBoxes = () => {
+      return (this.state.userDogs.map(dog => {
+        console.log(dog)
+        return (
+            <DogCheckbox user={this.props.user} dog={dog} updateDogState={() => this.updateSelectedDogs(dog)}/>
+        )
+      }))
+    }
 
     render(){
 
@@ -87,7 +108,8 @@ class BookTrip extends Component {
                     <div></div>
                   </Col>
                   <Col>
-                    <Checkboxes user={this.props.user} userDogs={this.state.userDogs}/>
+                    {/* <Checkboxes user={this.props.user} userDogs={this.state.userDogs}/> */}
+                    <FormGroup>{this.createCheckBoxes()}</FormGroup>
                   </Col>
                   <Col>
                     <div></div>
