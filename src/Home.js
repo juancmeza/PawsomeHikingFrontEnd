@@ -28,7 +28,6 @@ class Home extends Component {
   }
 
     render(){
-        const {date, location, time} = this.props.chosenTrip
 
         return(
             <div>
@@ -36,8 +35,8 @@ class Home extends Component {
                 <br></br>
                 <div>
                   {this.state.booking ? 
-                  <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user} toggleBooking={this.toggleBooking} handleLogout={this.props.handleLogout} toggleBooking={this.toggleBooking}/> : 
-                  <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} toggleBooking={this.toggleBooking} handleLogout={this.props.handleLogout} toggleBooking={this.toggleBooking}/>}
+                  <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} toggleBooking={this.toggleBooking}/> : 
+                  <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} toggleBooking={this.toggleBooking} handleLogout={this.props.handleLogout} />}
                 </div>
             </div>
         )

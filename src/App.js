@@ -44,6 +44,11 @@ class App extends Component {
   }
  }
 
+  selectTrip = (id) => {
+    const newSelectedTrip = this.state.trips.filter(trip => trip.id == id)
+    console.log(newSelectedTrip)
+    this.setState({selectedTrip: newSelectedTrip})
+  }
 
  getTrips = () => {
   fetch(API + "/trips", {
@@ -149,7 +154,7 @@ class App extends Component {
             </Route>
             <Route path='/upcomingTrips'>
             {this.state.loggedIn?
-            <UpcomingTrips handleLogout={this.handleLogout} allTrips={this.state.trips} user={this.state.user}/>
+            <UpcomingTrips handleLogout={this.handleLogout} allTrips={this.state.trips} user={this.state.user} chosenTrip={this.state.selectedTrip} selectTrip={this.selectTrip}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }

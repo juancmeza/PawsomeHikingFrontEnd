@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
 import { Container, Row, Col, Button, Form, Alert, Card} from "react-bootstrap"
 import SimpleReactCalendar from 'simple-react-calendar'
+import BookTrip from './BookTrip.js'
 import {
     BrowserRouter as Router,
     Route,
@@ -17,7 +18,7 @@ class UpcomingTrips extends Component {
   
   state ={
     myTrips: false,
-    bookTrip: true
+    bookTrip: false
   }
 
   showTrips = (trips) => {
@@ -28,11 +29,22 @@ class UpcomingTrips extends Component {
         <Col>{date}</Col>
         <Col>{location}</Col>
         <Col>{time}</Col>
-        <Col><Button variant='outline-info'>Book Trip!</Button></Col>
+        <div>
+            {this.state.myTrips ?
+            <Col><Button id={id} variant='outline-info'>Cancel!</Button></Col> :
+            <Col><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Col>
+            }
+        </div>
       </Row>
       )
     })
   }
+
+  renderBookTrip = (id) => {
+    console.log(id)
+    this.setState({bookTrip: true})
+    this.props.selectTrip(id)
+  } 
 
     render(){
         return(
@@ -45,7 +57,10 @@ class UpcomingTrips extends Component {
             </Row>
             <br></br>
             <div>
-              {this.state.myTrips ? this.showTrips(this.props.user.trips) : this.showTrips(this.props.allTrips)}
+              {this.state.bookTrip ?
+                <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user}/> :
+                this.state.myTrips ? this.showTrips(this.props.user.trips) : this.showTrips(this.props.allTrips)
+              }
             </div>
           </div>
         )

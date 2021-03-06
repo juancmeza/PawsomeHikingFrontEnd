@@ -19,27 +19,6 @@ class BookTrip extends Component {
     selectedDogs: []
   }
 
-  // componentDidMount(){
-  //   this.getUserDogs(this.props.user.id)
-  // }
-
-  // getUserDogs = (id) => {
-  //   fetch(API + `/users/${id}`, {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "Authorization": `Bearer ${localStorage.token}` 
-  //     },
-  //   })
-  //   .then((resp) => resp.json())
-  //   .then((data) => {
-  //     // console.log(data)
-  //     this.setState({
-  //       userDogs: data.dogs
-  //     })
-  //   })
-  // }
-
     updateSelectedDogs = (dog) => {
       if (this.state.selectedDogs.includes(dog)){
         const removingDog = [...this.state.selectedDogs].filter(includedDog => includedDog.id !== dog.id)
@@ -61,7 +40,7 @@ class BookTrip extends Component {
 
     bookTrip = () => {
       this.state.selectedDogs.map(dog => {
-        
+        console.log(dog.id, this.props.chosenTrip.id)
         let newTrip = {
           dog_trip: {
             dog_id: dog.id,
@@ -82,22 +61,11 @@ class BookTrip extends Component {
       })
     }
 
-  //   fetch("http://localhost:3000/user_locations", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(newUserLocation),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((userloc) => {
-  //       console.log(userloc);
-  //     });
-  // };
 
     render(){
-
       const {location, date, time} = this.props.chosenTrip
+      console.log(this.props.chosenTrip, 'test')
+
 
         return(
             <div>

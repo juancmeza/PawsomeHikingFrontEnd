@@ -8,24 +8,6 @@ import PetsIcon from '@material-ui/icons/Pets';
 
 export default function DogCheckbox({dog, updateSelectedDogs}) {
 
-  // useEffect(() => {
-  //   console.log(dog)
-  // })
-
-  // const [state, setState] = useState({
-  //   selected: [],
-  //   // userDogs: userDogs,
-  // });
-
-  // const handleChange = (event) => {
-  //   setState({ ...state, [event.target.name]: !event.target.checked });
-    // const selectedDogs = () => {
-    //   const sel = []
-      
-    // }  
-    // console.log(state, dog.name)
-  // };
-
   return (
       <FormControlLabel
         control={
