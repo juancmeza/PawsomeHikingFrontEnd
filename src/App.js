@@ -116,6 +116,7 @@ class App extends Component {
       .then((data) => this.handleAuthResponse(data))
       .catch(console.log);
   };
+
   handleSignup = (userInfo) => {
     fetch(API + "/sign_up", {
       method: "POST",
@@ -149,7 +150,7 @@ class App extends Component {
             {this.state.loggedIn?
             <Home handleLogout={this.handleLogout} chosenTrip={this.state.selectedTrip} user={this.state.user}/>
             :
-            <Login handleLoginOrSignup={this.handleLogin}/>
+            <Login handleLoginOrSignup={this.handleSignup}/>
             }
             </Route>
             <Route path='/upcomingTrips'>

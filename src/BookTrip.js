@@ -101,7 +101,7 @@ class BookTrip extends Component {
                 <br></br>
                 <Row>
                   <Col>
-                    <h6>Select puppies going on this trip:</h6>
+                    <h6>Select dog(s) going on this trip:</h6>
                   </Col>
                 </Row>
                 <Row>
@@ -109,8 +109,16 @@ class BookTrip extends Component {
                     <div></div>
                   </Col>
                   <Col>
-                    {/* <Checkboxes user={this.props.user} userDogs={this.state.userDogs}/> */}
-                    <FormGroup>{this.createCheckBoxes()}</FormGroup>
+                    <FormGroup>
+                      {this.props.user.dogs > 0 ?
+                       this.createCheckBoxes() :
+                       <div>
+                         <div>You haven't created a profile for your dog(s)</div>
+                         <br></br>
+                         <Button variant='outline-info'>Create dog profile</Button>
+                        </div>
+                      }
+                    </FormGroup>
                   </Col>
                   <Col>
                     <div></div>
@@ -118,7 +126,10 @@ class BookTrip extends Component {
                 </Row>
                 <Row>
                   <Col>
-                    <Button variant='outline-info' onClick={() => this.bookTrip()}>Book Trip!</Button>
+                    {this.props.user.dogs > 0 ?
+                      <Button variant='outline-info' onClick={() => this.bookTrip()}>Book Trip!</Button> :
+                      null
+                    }
                   </Col>
                 </Row>
             </div>

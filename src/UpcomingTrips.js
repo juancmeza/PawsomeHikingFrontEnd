@@ -41,9 +41,9 @@ class UpcomingTrips extends Component {
   }
 
   renderBookTrip = (id) => {
-    console.log(id)
-    this.setState({bookTrip: true})
     this.props.selectTrip(id)
+    debugger
+    this.setState({bookTrip: true})
   } 
 
     render(){
