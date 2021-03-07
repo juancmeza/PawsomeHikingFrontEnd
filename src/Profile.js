@@ -18,18 +18,16 @@ class Profile extends Component {
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
                 <br></br>
-                <ProfileTab />
-                <Row>
-                  <Col></Col>
-                  <Col>
-                    <ProfileCard user={this.props.user}/>
-                  </Col>
-                  <Col></Col>
-                </Row>
+                <ProfileTab user={this.props.user}/>
                 <br></br>
                 <Row>
                   <Col>
                     <h5>My Trips:</h5>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                  <Button variant='outline-info' >Create dog profile</Button>
                   </Col>
                 </Row>
             </div>

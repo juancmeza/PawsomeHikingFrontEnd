@@ -3,6 +3,7 @@ import Nav from './Nav';
 import { Container, Row, Col, Button, Form, Alert, Card} from "react-bootstrap"
 import SimpleReactCalendar from 'simple-react-calendar'
 import BookTrip from './BookTrip.js'
+import DogCard from './DogCard.js'
 import {
     BrowserRouter as Router,
     Route,
@@ -17,7 +18,7 @@ class UpcomingTrips extends Component {
 
   
   state ={
-    myTrips: false,
+    myTrips: true,
     bookTrip: false
   }
 
@@ -62,6 +63,7 @@ class UpcomingTrips extends Component {
                 this.state.myTrips ? this.showTrips(this.props.user.trips) : this.showTrips(this.props.allTrips)
               }
             </div>
+            <div>{this.props.user.dogs.map(dog => <DogCard dog={dog}/>)}</div>
           </div>
         )
     }

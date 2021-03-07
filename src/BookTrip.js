@@ -113,7 +113,7 @@ class BookTrip extends Component {
                       {this.props.user.dogs > 0 ?
                        this.createCheckBoxes() :
                        <div>
-                         <div>You haven't created a profile for your dog(s)</div>
+                         <div>You have not created a profile for your dog</div>
                          <br></br>
                          <Button variant='outline-info'>Create dog profile</Button>
                         </div>

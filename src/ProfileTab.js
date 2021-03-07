@@ -6,6 +6,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import ProfileCard from './ProfileCard.js'
+import { Link } from 'react-router-dom';
+import DogCard from './DogCard.js'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleTabs() {
+export default function ProfileTab({user}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -58,20 +61,34 @@ export default function SimpleTabs() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
+          <Tab label="My Info" {...a11yProps(0)} />
+          <Tab label="My Trips" {...a11yProps(1)} />
+          <Tab label="My Dogs" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <ProfileCard user={user}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        {user.trips > 0 ?
+          <div>{user.trips}</div> :
+          <div>
+            <h6>You don't have any scheduled trips</h6>
+            <br></br>
+            <div>
+              <Link to="/upcomingTrips">
+                <h5 className = "text-white nav-text">See Upcoming Trips </h5>
+              </Link> 
+            </div>
+          </div>}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        {user.dogs > 0 ?
+          // <div>{user.dogs.map(dog => <DogCard dog={dog}/>)}</div> :
+          console.log(user.dogs) :
+          null
+        }
       </TabPanel>
     </div>
   );
