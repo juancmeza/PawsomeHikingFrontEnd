@@ -59,7 +59,7 @@ class CreateDogProfile extends Component {
                   <Form.Control
                   onChange={this.handleChange}
                   type="text"
-                  name="Name"
+                  name="name"
                   placeholder="name..."
                   style={{
                     backgroundColor: "#181818",

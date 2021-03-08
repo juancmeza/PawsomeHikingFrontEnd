@@ -17,7 +17,7 @@ class Friends extends Component {
                 <Nav handleLogout={this.props.handleLogout}/>
                 <h5>You have reached the Friends Component</h5>
                 <br></br>
-                <Map location={location} zoomLevel={15} />
+                <Map location={location} zoomLevel={11} />
             </div>
         )
     }

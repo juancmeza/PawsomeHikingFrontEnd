@@ -1,12 +1,11 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import { Icon } from '@iconify/react'
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import './map.css'
+import LocationOnIcon from '@material-ui/icons/LocationOn';import './map.css'
 
 const LocationPin = ({ text }) => (
   <div className="pin">
-    <Icon icon={locationOnIcon} className="pin-icon" />
+    <LocationOnIcon className="pin-icon" fontSize='large' color='secondary'/>
     <p className="pin-text">{text}</p>
   </div>
 )
