@@ -73,7 +73,7 @@ export default function ProfileTab({user, selectTrip}) {
         <ProfileCard user={user}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {user.trips ?
+        {user.trips.length > 0 ?
               <Trips user={user} trips={user.trips} userTripsOnly={true} selectTrip={selectTrip}/> :
               <div>
             <h6>You don't have any scheduled trips</h6>
@@ -87,10 +87,15 @@ export default function ProfileTab({user, selectTrip}) {
           </div>}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        {user.dogs ?
-          <div>{user.dogs.map(dog => <DogCard dog={dog}/>)}</div> :
-          null
+        {user.dogs.length > 0 ?
+          <Row><br></br>{user.dogs.map(dog => <Col><DogCard dog={dog}/></Col>)}</Row> :
+          <div>You have not created a profile for your dog(s)</div>
         }
+        <Row>
+          <Col>
+            <Button variant='outline-info'>Create dog profile</Button>
+          </Col>
+        </Row>
       </TabPanel>
     </div>
   );

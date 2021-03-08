@@ -6,6 +6,7 @@ import UpcomingTrips from "./UpcomingTrips.js";
 import Friends from "./Friends.js";
 import Profile from "./Profile.js";
 import BookTrip from "./BookTrip.js";
+import CreateDogProfile from './CreateDogProfile'
 
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -174,13 +175,13 @@ class App extends Component {
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
             </Route>
-            {/* <Route path='/bookTrip'>
-            {this.state.loggedIn?
-            <BookTrip handleLogout={this.handleLogout} allTrips={this.state.trips} user={this.state.user}/>
+            <Route path='/createDogProfile'>
+            {this.state.loggedIn ?
+            <CreateDogProfile handleLogout={this.handleLogout} user={this.state.user}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
-            </Route> */}
+            </Route>
           </Switch>
         </Router>
       </div>

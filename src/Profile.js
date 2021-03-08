@@ -20,16 +20,6 @@ class Profile extends Component {
                 <br></br>
                 <ProfileTab user={this.props.user} selectTrip={this.props.selectTrip}/>
                 <br></br>
-                <Row>
-                  <Col>
-                    <h5>My Trips:</h5>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <Button variant='outline-info' >Create dog profile</Button>
-                  </Col>
-                </Row>
             </div>
         )
     }

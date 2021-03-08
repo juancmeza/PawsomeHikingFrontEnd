@@ -8,7 +8,7 @@ import DogCheckbox from './DogCheckbox.js';
 
 import {
     BrowserRouter as Router,
-    Redirect,
+    Redirect, Link
   } from "react-router-dom";
 
 const API = 'http://localhost:3000'
@@ -110,12 +110,12 @@ class BookTrip extends Component {
                   </Col>
                   <Col>
                     <FormGroup>
-                      {this.props.user.dogs ?
+                      {this.props.user.dogs.length > 0 ?
                        this.createCheckBoxes() :
                        <div>
                          <div>You have not created a profile for your dog(s)</div>
                          <br></br>
-                         <Button variant='outline-info'>Create dog profile</Button>
+                         <Link to="/createDogProfile"><Button variant='outline-info'> Create dog profile </Button></Link>
                         </div>
                       }
                     </FormGroup>
@@ -126,9 +126,9 @@ class BookTrip extends Component {
                 </Row>
                 <Row>
                   <Col>
-                    {this.props.user.dogs ?
+                    {this.props.user.dogs.length > 0 ?
                       <Button variant='outline-info' onClick={() => this.bookTrip()}>Book Trip!</Button> :
-                      null
+                      null                    
                     }
                   </Col>
                 </Row>
