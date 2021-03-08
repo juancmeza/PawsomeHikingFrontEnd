@@ -151,7 +151,7 @@ class App extends Component {
             {this.state.loggedIn?
             <Home handleLogout={this.handleLogout} chosenTrip={this.state.selectedTrip} user={this.state.user}/>
             :
-            <Login handleLoginOrSignup={this.handleLogin}/>
+            <Login handleLoginOrSignup={this.handleSignup}/>
             }
             </Route>
             <Route path='/upcomingTrips'>
@@ -177,7 +177,7 @@ class App extends Component {
             </Route>
             <Route path='/createDogProfile'>
             {this.state.loggedIn ?
-            <CreateDogProfile handleLogout={this.handleLogout} user={this.state.user}/>
+            <CreateDogProfile handleLogout={this.handleLogout} user={this.state.user} persistUser={this.persistUser}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }

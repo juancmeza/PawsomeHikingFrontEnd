@@ -38,6 +38,8 @@ class CreateDogProfile extends Component {
       })
       .then(res => res.json())
       .then(console.log)
+
+      this.props.persistUser()
   }
 
   handleChange = (e) => {
