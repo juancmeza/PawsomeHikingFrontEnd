@@ -93,7 +93,7 @@ export default function ProfileTab({user, selectTrip}) {
         }
         <Row>
           <Col>
-            <Button variant='outline-info'>Create dog profile</Button>
+          <Link to="/createDogProfile"><Button variant='outline-info'> Create dog profile </Button></Link>
           </Col>
         </Row>
       </TabPanel>

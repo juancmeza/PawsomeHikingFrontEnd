@@ -151,7 +151,7 @@ class App extends Component {
             {this.state.loggedIn?
             <Home handleLogout={this.handleLogout} chosenTrip={this.state.selectedTrip} user={this.state.user}/>
             :
-            <Login handleLoginOrSignup={this.handleSignup}/>
+            <Login handleLoginOrSignup={this.handleLogin}/>
             }
             </Route>
             <Route path='/upcomingTrips'>
