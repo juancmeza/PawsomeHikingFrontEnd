@@ -162,7 +162,7 @@ class App extends Component {
             </Route>
             <Route path='/profile'>
             {this.state.loggedIn?
-            <Profile handleLogout={this.handleLogout} user={this.state.user}/>
+            <Profile handleLogout={this.handleLogout} user={this.state.user} selectTrip={this.selectTrip}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }

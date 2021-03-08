@@ -8,7 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import ProfileCard from './ProfileCard.js'
 import { Link } from 'react-router-dom';
+import { Row, Col, Button} from "react-bootstrap"
 import DogCard from './DogCard.js'
+import Trips from './Trips.js'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -50,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProfileTab({user}) {
+export default function ProfileTab({user, selectTrip}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -71,22 +73,22 @@ export default function ProfileTab({user}) {
         <ProfileCard user={user}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {user.trips > 0 ?
-          <div>{user.trips}</div> :
-          <div>
+        {user.trips ?
+              <Trips user={user} trips={user.trips} userTripsOnly={true} selectTrip={selectTrip}/> :
+              <div>
             <h6>You don't have any scheduled trips</h6>
+            <div>{console.log(user)}</div>
             <br></br>
             <div>
               <Link to="/upcomingTrips">
-                <h5 className = "text-white nav-text">See Upcoming Trips </h5>
+                <Button variant='outline-info'>See Upcoming Trips </Button>
               </Link> 
             </div>
           </div>}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        {user.dogs > 0 ?
-          // <div>{user.dogs.map(dog => <DogCard dog={dog}/>)}</div> :
-          console.log(user.dogs) :
+        {user.dogs ?
+          <div>{user.dogs.map(dog => <DogCard dog={dog}/>)}</div> :
           null
         }
       </TabPanel>

@@ -110,10 +110,10 @@ class BookTrip extends Component {
                   </Col>
                   <Col>
                     <FormGroup>
-                      {this.props.user.dogs > 0 ?
+                      {this.props.user.dogs ?
                        this.createCheckBoxes() :
                        <div>
-                         <div>You have not created a profile for your dog</div>
+                         <div>You have not created a profile for your dog(s)</div>
                          <br></br>
                          <Button variant='outline-info'>Create dog profile</Button>
                         </div>
@@ -126,7 +126,7 @@ class BookTrip extends Component {
                 </Row>
                 <Row>
                   <Col>
-                    {this.props.user.dogs > 0 ?
+                    {this.props.user.dogs ?
                       <Button variant='outline-info' onClick={() => this.bookTrip()}>Book Trip!</Button> :
                       null
                     }

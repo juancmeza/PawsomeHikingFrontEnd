@@ -18,7 +18,7 @@ class Profile extends Component {
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
                 <br></br>
-                <ProfileTab user={this.props.user}/>
+                <ProfileTab user={this.props.user} selectTrip={this.props.selectTrip}/>
                 <br></br>
                 <Row>
                   <Col>
