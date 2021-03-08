@@ -1,13 +1,13 @@
 import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
-import { Container, Row, Col, Button, Form, Alert} from "react-bootstrap"
-import {
-    BrowserRouter as Router,
-    Route,
-    Redirect,
-    Switch,
-  } from "react-router-dom";
+import Map from './Map.js';
 
+
+const location = {
+  address: '1600 Amphitheatre Parkway, Mountain View, california.',
+  lat: 37.42216,
+  lng: -122.08427,
+}
 
 class Friends extends Component {
 
@@ -16,6 +16,8 @@ class Friends extends Component {
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
                 <h5>You have reached the Friends Component</h5>
+                <br></br>
+                <Map location={location} zoomLevel={15} />
             </div>
         )
     }
