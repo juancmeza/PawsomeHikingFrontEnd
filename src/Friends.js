@@ -4,7 +4,7 @@ import Map from './Map.js';
 
 
 const location = {
-  address: '1600 Amphitheatre Parkway, Mountain View, california.',
+  address: 'Some addres',
   lat: 37.42216,
   lng: -122.08427,
 }

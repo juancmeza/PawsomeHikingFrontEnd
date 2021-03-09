@@ -39,13 +39,11 @@ class BookTrip extends Component {
     }
 
     bookTrip = () => {
-      this.state.selectedDogs.map(dog => {
-        console.log(dog.id, this.props.chosenTrip.id)
         let newTrip = {
           dog_trip: {
-            dog_id: dog.id,
             trip_id: this.props.chosenTrip.id
-          }
+          },
+          dogs: this.state.selectedDogs
         } 
 
         fetch(API + "/dog_trips", {
@@ -57,8 +55,10 @@ class BookTrip extends Component {
           body: JSON.stringify(newTrip)
         })
         .then(res => res.json())
-        .then(console.log)
-      })
+        .then(data => {
+          this.props.setUser(data.user)
+        } 
+        )
     }
 
 
@@ -69,6 +69,10 @@ class BookTrip extends Component {
 
         return(
             <div>
+                <div>
+                  <Nav handleLogout={this.props.handleLogout}/>
+                  <br></br>
+                </div>
                 <Row>
                   <Col>
                     <div>

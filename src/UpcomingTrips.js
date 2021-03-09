@@ -14,10 +14,6 @@ import {
 
 class UpcomingTrips extends Component {
 
-  
-  state ={
-    bookTrip: false
-  }
 
     render(){
         return(
@@ -25,10 +21,7 @@ class UpcomingTrips extends Component {
             <Nav handleLogout={this.props.handleLogout}/>
             <br></br>
             <div>
-              {this.state.bookTrip ?
-                <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user}/> :
-                <Trips chosenTrip={this.props.chosenTrip} user={this.props.user} trips={this.props.allTrips} userTripsOnly={false} selectTrip={this.props.selectTrip}/>
-              }
+                <Trips user={this.props.user} trips={this.props.allTrips} userTripsOnly={false} selectTrip={this.props.selectTrip}/>
             </div>
           </div>
         )

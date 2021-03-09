@@ -45,8 +45,15 @@ class App extends Component {
   }
  }
 
+  setUser = (user) => {
+    console.log(user)
+    this.setState({
+      user: user
+    })
+  }
+
   selectTrip = (id) => {
-    const newSelectedTrip = this.state.trips.filter(trip => trip.id == id)
+    const newSelectedTrip = this.state.trips.filter(trip => trip.id == id)[0]
     console.log(newSelectedTrip)
     this.setState({selectedTrip: newSelectedTrip})
   }
@@ -177,7 +184,14 @@ class App extends Component {
             </Route>
             <Route path='/createDogProfile'>
             {this.state.loggedIn ?
-            <CreateDogProfile handleLogout={this.handleLogout} user={this.state.user} persistUser={this.persistUser}/>
+            <CreateDogProfile handleLogout={this.handleLogout} user={this.state.user} persistUser={this.persistUser} setUser={this.setUser}/>
+            :
+            <Login handleLoginOrSignup={this.handleLogin}/>
+            }
+            </Route>
+            <Route path='/bookTrip'>
+            {this.state.loggedIn ?
+            <BookTrip handleLogout={this.handleLogout} user={this.state.user} chosenTrip={this.state.selectedTrip} setUser={this.setUser}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }

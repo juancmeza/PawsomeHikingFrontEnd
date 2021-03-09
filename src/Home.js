@@ -14,18 +14,14 @@ import {
 
 class Home extends Component {
 
-  state = {
-    booking: false
-  }
-
   // componentDidMount() {
   //   this.setState({booking: false})
   // }
 
-  toggleBooking = () => {
-    const update = !this.state.booking
-    this.setState({booking: update})
-  }
+  // toggleBooking = () => {
+  //   const update = !this.state.booking
+  //   this.setState({booking: update})
+  // }
 
     render(){
 
@@ -34,9 +30,7 @@ class Home extends Component {
                 <Nav handleLogout={this.props.handleLogout}/>
                 <br></br>
                 <div>
-                  {this.state.booking ? 
-                  <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} toggleBooking={this.toggleBooking}/> : 
-                  <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} toggleBooking={this.toggleBooking} handleLogout={this.props.handleLogout} />}
+                  <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} />
                 </div>
             </div>
         )

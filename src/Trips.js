@@ -1,14 +1,9 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import Nav from './Nav';
 import { Container, Row, Col, Button, Form, Alert, Card} from "react-bootstrap"
 import SimpleReactCalendar from 'simple-react-calendar'
 import BookTrip from './BookTrip.js'
-import {
-    BrowserRouter as Router,
-    Route,
-    Redirect,
-    Switch,
-  } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 
 class Trips extends Component {
@@ -20,6 +15,7 @@ class Trips extends Component {
   }
 
   showTrips = (trips) => {
+    let tripIds = this.props.user.trips.map(trip => trip.id)
     return trips.map(trip => {
       const {id, date, location, time} = trip
       return (
@@ -30,7 +26,9 @@ class Trips extends Component {
         <div>
             {this.props.userTripsOnly ?
             <Col><Button id={id} variant='outline-info'>Cancel</Button></Col> :
-            <Col><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Col>
+            tripIds.includes(id) ?
+            <Col><Button id={id} variant='outline-info'>Cancel</Button></Col> :
+            <Col><Link to ='bookTrip'><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Link></Col>
             }
         </div>
       </Row>
