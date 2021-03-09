@@ -1,9 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
-import { Container, Row, Col, Button, Form, Alert} from "react-bootstrap"
-import SimpleReactCalendar from 'simple-react-calendar'
+import { Row, Col, Button} from "react-bootstrap"
 import FormGroup from '@material-ui/core/FormGroup';
 import DogCheckbox from './DogCheckbox.js';
+import Map from './Map.js'
 
 
 import {
@@ -12,6 +12,12 @@ import {
   } from "react-router-dom";
 
 const API = 'http://localhost:3000'
+
+const mapLocation = {
+  address: '720 Steiner Street',
+  lat: 37.7765,
+  lng: -122.4330,
+}
 
 class BookTrip extends Component {
 
@@ -59,7 +65,6 @@ class BookTrip extends Component {
         )
     }
 
-
     render(){
       const {location, date, time} = this.props.chosenTrip
       console.log(this.props.chosenTrip, 'test')
@@ -91,12 +96,12 @@ class BookTrip extends Component {
                 <br></br>
                 <Row>
                   <Col>
-                    <h6>Drop off location: Some address</h6>
+                    <h6>Drop off location: 720 Steiner Street</h6>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <img src='https://i.insider.com/5a9d79812b66e624008b4573?width=500&format=jpeg&auto=webp'/>
+                    <Map location={mapLocation} zoomLevel={12.8}/>
                   </Col>
                   <br></br>
                 </Row>

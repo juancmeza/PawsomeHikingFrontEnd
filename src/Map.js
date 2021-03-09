@@ -5,7 +5,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';import './map.css'
 
 const LocationPin = ({ text }) => (
   <div className="pin">
-    <LocationOnIcon className="pin-icon" fontSize='large' color='secondary'/>
+    <LocationOnIcon className="pin-icon" color='secondary'/>
     <p className="pin-text">{text}</p>
   </div>
 )
