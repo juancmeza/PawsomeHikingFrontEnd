@@ -8,13 +8,19 @@ import { Link } from 'react-router-dom';
 
 class Trips extends Component {
 
-  
   state ={
     myTrips: true,
     bookTrip: false
   }
 
   showTrips = (trips) => {
+
+    if (this.props.userTripsOnly){
+
+    let uniqueUserTripIds = [...new Set(trips)]
+    trips = uniqueUserTripIds
+    }
+
     let tripIds = this.props.user.trips.map(trip => trip.id)
     return trips.map(trip => {
       const {id, date, location, time} = trip

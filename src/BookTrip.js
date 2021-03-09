@@ -40,9 +40,7 @@ class BookTrip extends Component {
 
     bookTrip = () => {
         let newTrip = {
-          dog_trip: {
-            trip_id: this.props.chosenTrip.id
-          },
+            trip_id: this.props.chosenTrip.id,
           dogs: this.state.selectedDogs
         } 
 
