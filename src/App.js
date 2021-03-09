@@ -7,6 +7,7 @@ import Friends from "./Friends.js";
 import Profile from "./Profile.js";
 import BookTrip from "./BookTrip.js";
 import CreateDogProfile from './CreateDogProfile'
+import EditDog from './EditDog.js'
 
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -30,8 +31,13 @@ class App extends Component {
       location: null,
       time: null
     },
-    trips: []
-
+    trips: [],
+    chosenDog: {
+      name:'',
+      weight:'',
+      breed:'',
+      age:''
+    }
   }
 
 
@@ -50,6 +56,11 @@ class App extends Component {
     this.setState({
       user: user
     })
+  }
+
+  selectDog = (id) => {
+    const selectedDog = this.state.user.dogs.filter(dog => dog.id === id)[0]
+    this.setState({chosenDog: selectedDog})
   }
 
   selectTrip = (id) => {
@@ -170,7 +181,7 @@ class App extends Component {
             </Route>
             <Route path='/profile'>
             {this.state.loggedIn?
-            <Profile handleLogout={this.handleLogout} user={this.state.user} selectTrip={this.selectTrip}/>
+            <Profile handleLogout={this.handleLogout} user={this.state.user} selectTrip={this.selectTrip} selectDog={this.selectDog}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }
@@ -192,6 +203,13 @@ class App extends Component {
             <Route path='/bookTrip'>
             {this.state.loggedIn ?
             <BookTrip handleLogout={this.handleLogout} user={this.state.user} chosenTrip={this.state.selectedTrip} setUser={this.setUser}/>
+            :
+            <Login handleLoginOrSignup={this.handleLogin}/>
+            }
+            </Route>
+            <Route path='/editDog'>
+            {this.state.loggedIn ?
+            <EditDog handleLogout={this.handleLogout} user={this.state.user} setUser={this.setUser} chosenDog={this.state.chosenDog}/>
             :
             <Login handleLoginOrSignup={this.handleLogin}/>
             }

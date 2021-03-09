@@ -67,8 +67,6 @@ class BookTrip extends Component {
 
     render(){
       const {location, date, time} = this.props.chosenTrip
-      console.log(this.props.chosenTrip, 'test')
-
 
         return(
             <div>
@@ -101,7 +99,7 @@ class BookTrip extends Component {
                 </Row>
                 <Row>
                   <Col>
-                    <Map location={mapLocation} zoomLevel={12.8}/>
+                    <Map location={mapLocation} zoomLevel={12.9}/>
                   </Col>
                   <br></br>
                 </Row>

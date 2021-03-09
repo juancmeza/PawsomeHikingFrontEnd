@@ -5,6 +5,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
+
 
 const useStyles = makeStyles({
   root: {
@@ -18,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function DogCard({dog}) {
+export default function DogCard({dog, selectDog}) {
   const classes = useStyles();
 
   return (
@@ -38,7 +40,7 @@ export default function DogCard({dog}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Edit</Button>
+        <Link to ='editDog'><Button id={dog.id} variant='outline-info' onClick={() => selectDog(dog.id)}>Edit</Button></Link>
       </CardActions>
     </Card>
   );

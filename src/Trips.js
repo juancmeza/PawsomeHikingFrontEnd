@@ -53,7 +53,7 @@ class Trips extends Component {
           <div>
             <Row>
               <Col>
-                  <SimpleReactCalendar trips={this.props.trips}/>
+                  {/* <SimpleReactCalendar trips={this.props.trips}/> */}
               </Col>
             </Row>
             <br></br>

@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProfileTab({user, selectTrip}) {
+export default function ProfileTab({user, selectTrip, selectDog}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -88,7 +88,7 @@ export default function ProfileTab({user, selectTrip}) {
       </TabPanel>
       <TabPanel value={value} index={2}>
         {user.dogs.length > 0 ?
-          <Row><br></br>{user.dogs.map(dog => <Col><DogCard dog={dog}/></Col>)}</Row> :
+          <Row><br></br>{user.dogs.map(dog => <Col><DogCard dog={dog} selectDog={selectDog}/></Col>)}</Row> :
           <div>You have not created a profile for your dog(s)</div>
         }
         <Row>
