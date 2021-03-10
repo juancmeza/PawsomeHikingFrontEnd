@@ -4,17 +4,21 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import CardMedia from '@material-ui/core/CardMedia';
 
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 275,
+    minWidth: 450,
   },
   title: {
     fontSize: 16,
   },
   pos: {
     marginBottom: 12,
+  },
+  media: {
+    height: 260,
   },
 });
 
@@ -33,6 +37,11 @@ export default function TripCard({trip}) {
         <Typography className={classes.title} >
           Time: {trip.time}
         </Typography>
+        <CardMedia
+          className={classes.media}
+          image="http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg"
+          title="Fort Funston"
+        />
       </CardContent>
     </Card>
   );
