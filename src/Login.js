@@ -16,6 +16,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
+        <br></br>
         <Container>
           <Row>
             <Col>
@@ -59,7 +60,7 @@ class Login extends React.Component {
                   }}
                 />
                 <br />
-                <Button variant="dark" type="submit">
+                <Button variant="outline-info" type="submit">
                   Submit
                 </Button>
               </Form>

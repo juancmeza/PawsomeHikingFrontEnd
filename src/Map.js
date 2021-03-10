@@ -2,6 +2,7 @@ import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import { Icon } from '@iconify/react'
 import LocationOnIcon from '@material-ui/icons/LocationOn';import './map.css'
+import ApiKey from './ApiKey.js'
 
 const LocationPin = ({ text }) => (
   <div className="pin">
@@ -9,8 +10,6 @@ const LocationPin = ({ text }) => (
     <p className="pin-text">{text}</p>
   </div>
 )
-
-const KEY = process.env.REACT_APP_API_KEY
 
 const Map = ({ location, zoomLevel }) => (
   <div className="map">

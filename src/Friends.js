@@ -23,7 +23,9 @@ class Friends extends Component {
                   <PetsOutlinedIcon />
                   <h3 className="text-white">PAWsome Hiking</h3>
                 </div>
-                <Button variant='outline-info'> Signup </Button>
+                <br></br>
+                <Button variant='outline-info'> Signup </Button><Button variant='outline-info'> Login </Button>
+                <br></br>
                 <div>
                   {this.state.signup ?
                   <Signup /> :
