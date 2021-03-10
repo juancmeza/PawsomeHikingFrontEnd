@@ -15,14 +15,11 @@ class Trips extends Component {
 
   showTrips = (trips) => {
 
-    if (this.props.userTripsOnly){
-
-    let uniqueUserTripIds = [...new Set(trips)]
-    trips = uniqueUserTripIds
-    }
+    let uniqueTrips = [...new Set(trips)]
+    
 
     let tripIds = this.props.user.trips.map(trip => trip.id)
-    return trips.map(trip => {
+    return uniqueTrips.map(trip => {
       const {id, date, location, time} = trip
       return (
       <Row>
@@ -44,7 +41,6 @@ class Trips extends Component {
 
   renderBookTrip = (id) => {
     this.props.selectTrip(id)
-    debugger
     this.setState({bookTrip: true})
   } 
 

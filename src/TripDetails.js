@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
 import { Container, Row, Col, Button, Form, Alert} from "react-bootstrap"
 import SimpleReactCalendar from 'simple-react-calendar'
+import Map from './Map.js'
 import {
     BrowserRouter as Router,
     Route,
@@ -10,16 +11,23 @@ import {
     Switch,
   } from "react-router-dom";
 
+let mapLocation = {
+  address: '720 Steiner Street',
+  lat: 37.7765,
+  lng: -122.4330,
+}
+
 
 class TripDetails extends Component {
 
-  state = {
-    Booking: false
-  }
+  // state = {
+  //   mapLocation: {
+
+  //   }
+  // }
 
     render(){
 
-      // const {date, location, time} = this.props.chosenTrip
         const {date, location, time} = this.props.chosenTrip
 
         return(
@@ -44,16 +52,16 @@ class TripDetails extends Component {
                     <br></br>
                     <Row>
                         <Col>
-                        <img src='https://www.tideschart.com/maps/en/Fort-Funston-Beach-United-States-tides-map.png'/>
+                        <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>
                         </Col>
                         <Col>
-                            <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>
+                        <Map location={mapLocation} zoomLevel={12.9}/>
                         </Col>
                     </Row>
                     <br></br>
                     <Row>
                       <Col>
-                          <Button variant='outline-info'>Sign my puppy up!</Button>
+                          <Link to='/bookTrip'><Button variant='outline-info'>Sign my puppy up!</Button></Link>
                       </Col>
                     </Row>
                     <br></br>

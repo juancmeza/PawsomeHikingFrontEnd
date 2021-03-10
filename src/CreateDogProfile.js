@@ -52,61 +52,67 @@ class CreateDogProfile extends Component {
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
                 <br></br>
-                <Form onSubmit={(e) => {e.preventDefault(); this.createDog(this.state);}}>
-                  <Form.Label style={{ color: "#E4E6EB" }}>Name</Form.Label>
-                  <Form.Control
-                  onChange={this.handleChange}
-                  type="text"
-                  name="name"
-                  placeholder="name..."
-                  style={{
-                    backgroundColor: "#181818",
-                    borderColor: "#333333",
-                    color: "#C0C0C0",
-                  }}
-                  />
-                  <br />
-                  <Form.Label style={{ color: "#E4E6EB" }}>Weight</Form.Label>
-                  <Form.Control
-                    onChange={this.handleChange}
-                    type="text"
-                    name="weight"
-                    placeholder="Weight"
-                    style={{
-                      backgroundColor: "#181818",
-                      borderColor: "#333333",
-                      color: "#C0C0C0",
-                    }}
-                  />
-                  <br />
-                  <Form.Label style={{ color: "#E4E6EB" }}>Breed</Form.Label>
-                  <Form.Control
-                    onChange={this.handleChange}
-                    type="text"
-                    name="breed"
-                    placeholder="Breed"
-                    style={{
-                      backgroundColor: "#181818",
-                      borderColor: "#333333",
-                      color: "#C0C0C0",
-                    }}
-                  />
-                  <br />
-                  <Form.Label style={{ color: "#E4E6EB" }}>Age</Form.Label>
-                  <Form.Control
-                    onChange={this.handleChange}
-                    type="text"
-                    name="age"
-                    placeholder="Age"
-                    style={{
-                      backgroundColor: "#181818",
-                      borderColor: "#333333",
-                      color: "#C0C0C0",
-                    }}
-                  />
-                  <br />
-                  <Button variant="dark" type="submit">Submit</Button>
-                </Form>
+                <Row>
+                  <Col></Col>
+                  <Col>
+                    <Form onSubmit={(e) => {e.preventDefault(); this.createDog(this.state);}}>
+                      <Form.Label style={{ color: "#E4E6EB" }}>Name</Form.Label>
+                      <Form.Control
+                      onChange={this.handleChange}
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      style={{
+                        backgroundColor: "#181818",
+                        borderColor: "#333333",
+                        color: "#C0C0C0",
+                      }}
+                      />
+                      <br />
+                      <Form.Label style={{ color: "#E4E6EB" }}>Weight</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        type="text"
+                        name="weight"
+                        placeholder="Weight"
+                        style={{
+                          backgroundColor: "#181818",
+                          borderColor: "#333333",
+                          color: "#C0C0C0",
+                        }}
+                      />
+                      <br />
+                      <Form.Label style={{ color: "#E4E6EB" }}>Breed</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        type="text"
+                        name="breed"
+                        placeholder="Breed"
+                        style={{
+                          backgroundColor: "#181818",
+                          borderColor: "#333333",
+                          color: "#C0C0C0",
+                        }}
+                      />
+                      <br />
+                      <Form.Label style={{ color: "#E4E6EB" }}>Age</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        type="text"
+                        name="age"
+                        placeholder="Age"
+                        style={{
+                          backgroundColor: "#181818",
+                          borderColor: "#333333",
+                          color: "#C0C0C0",
+                        }}
+                      />
+                      <br />
+                      <Button variant="dark" type="submit">Submit</Button>
+                    </Form>
+                  </Col>
+                  <Col></Col>
+                </Row>
             </div>
         )
     }
