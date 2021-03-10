@@ -26,14 +26,16 @@ class Trips extends Component {
         <Col>{date}</Col>
         <Col>{location}</Col>
         <Col>{time}</Col>
-        <div>
-            {this.props.userTripsOnly ?
-            <Col><Button id={id} variant='outline-info'>Cancel</Button></Col> :
-            tripIds.includes(id) ?
-            <Col><Button id={id} variant='outline-info'>Cancel</Button></Col> :
-            <Col><Link to ='bookTrip'><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Link></Col>
-            }
-        </div>
+        <Col>
+          <div>
+              {this.props.userTripsOnly ?
+              <Col><Button id={id} variant='outline-info'>Cancel</Button></Col> :
+              tripIds.includes(id) ?
+              <Col><Button id={id} variant='outline-info'>Cancel</Button></Col> :
+              <Col><Link to ='bookTrip'><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Link></Col>
+              }
+          </div>
+        </Col>
       </Row>
       )
     })

@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
 import Map from './Map.js';
+import Carousel from './Carousel.js'
 
 
 const location = {
@@ -17,7 +18,7 @@ class Friends extends Component {
                 <Nav handleLogout={this.props.handleLogout}/>
                 <h5>You have reached the Friends Component</h5>
                 <br></br>
-                <Map location={location} zoomLevel={11} />
+                <Carousel />
                 <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>
                 <img src='https://i.pinimg.com/originals/89/94/ea/8994eaf9b1f80e21c9f44e544998f714.jpg'/>
                 <img src='https://greatruns.com/wp-content/uploads/2016/11/SanFran3.jpg'/>
