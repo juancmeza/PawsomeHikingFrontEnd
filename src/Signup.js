@@ -20,18 +20,44 @@ class Signup extends React.Component {
         <Container>
           <Row>
             <Col>
-            <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-beach-and-dogs.jpg'/>
+            {/* <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-beach-and-dogs.jpg'/> */}
             </Col>
           </Row>
           <Row>
             <Col></Col>
             <Col>
+              <br></br>
               <Form
                 onSubmit={(e) => {
                   e.preventDefault();
                   this.props.handleLoginOrSignup(this.state);
                 }}
               >
+                <Form.Label style={{ color: "#E4E6EB" }}>Password</Form.Label>
+                <Form.Control
+                  onChange={this.handleChange}
+                  type="password"
+                  name="password"
+                  placeholder="Password..."
+                  style={{
+                    backgroundColor: "#181818",
+                    borderColor: "#0c7487",
+                    color: "#C0C0C0",
+                  }}
+                />
+                <br />
+                <Form.Label style={{ color: "#E4E6EB" }}>Password</Form.Label>
+                <Form.Control
+                  onChange={this.handleChange}
+                  type="password"
+                  name="password"
+                  placeholder="Password..."
+                  style={{
+                    backgroundColor: "#181818",
+                    borderColor: "#0c7487",
+                    color: "#C0C0C0",
+                  }}
+                />
                 <Form.Label style={{ color: "#E4E6EB" }}>
                   Username
                 </Form.Label>

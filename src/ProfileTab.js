@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Button} from "react-bootstrap"
 import DogCard from './DogCard.js'
 import Trips from './Trips.js'
+import Paws from './Paws.js'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,47 +63,55 @@ export default function ProfileTab({user, selectTrip, selectDog}) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: '#268397' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
-          <Tab label="My Info" {...a11yProps(0)} />
-          <Tab label="My Trips" {...a11yProps(1)} />
-          <Tab label="My Dogs" {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        <ProfileCard user={user}/>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        {user.trips.length > 0 ?
-              <Trips user={user} trips={user.trips} userTripsOnly={true} selectTrip={selectTrip}/> :
+      <div className='MainComponents'>
+        <AppBar position="static" style={{ backgroundColor: '#268397' }}>
+          <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
+            <Tab label="My Info" {...a11yProps(0)} />
+            <Tab label="My Trips" {...a11yProps(1)} />
+            <Tab label="My Dogs" {...a11yProps(2)} />
+          </Tabs>
+        </AppBar>
+        <TabPanel value={value} index={0}>
+          <Paws />
+          <ProfileCard user={user}/>
+          <Paws />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <Paws />
+          {user.trips.length > 0 ?
+                <Trips user={user} trips={user.trips} userTripsOnly={true} selectTrip={selectTrip}/> :
+                <div>
+              <h6>You don't have any scheduled trips</h6>
+              <div>{console.log(user)}</div>
+              <br></br>
               <div>
-            <h6>You don't have any scheduled trips</h6>
-            <div>{console.log(user)}</div>
-            <br></br>
-            <div>
-              <Link to="/upcomingTrips">
-                <Button variant='outline-info'>See Upcoming Trips </Button>
-              </Link> 
-            </div>
-          </div>}
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        {user.dogs.length > 0 ?
-          <Row><br></br>{user.dogs.map(dog => <Col><DogCard dog={dog} selectDog={selectDog}/></Col>)}</Row> :
-          <div>You have not created a profile for your dog(s)</div>
-        }
-        <Row>
-          <Col>
+                <Link to="/upcomingTrips">
+                  <Button variant='outline-info'>See Upcoming Trips </Button>
+                </Link> 
+              </div>
+            </div>}
+          <Paws />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
           <Link to="/createDogProfile"><Button variant='outline-info'> Create dog profile </Button></Link>
-          </Col>
-        </Row>
-      </TabPanel>
-      <div>
-        <Row>
-          <Col>
-            {/* <img src='https://lh3.googleusercontent.com/proxy/7P6fJhGmAKdl3mXN4jF6pSbjCs6SlQh7ccsmIxfnaIATUkyFdt4S2d0EVIO02KrgnS-t5pEpb8Io8lAj131Gv6GRUYOja5M' /> */}
-          </Col>
-        </Row>
+          <Paws />
+          {user.dogs.length > 0 ?
+            <Row><br></br>{user.dogs.map(dog => <Col><DogCard dog={dog} selectDog={selectDog}/></Col>)}</Row> :
+            <div>You have not created a profile for your dog(s)</div>
+          }
+          <Row>
+            <Col>
+            <Paws />
+            </Col>
+          </Row>
+        </TabPanel>
+        <div>
+          <Row>
+            <Col>
+              {/* <img src='https://lh3.googleusercontent.com/proxy/7P6fJhGmAKdl3mXN4jF6pSbjCs6SlQh7ccsmIxfnaIATUkyFdt4S2d0EVIO02KrgnS-t5pEpb8Io8lAj131Gv6GRUYOja5M' /> */}
+            </Col>
+          </Row>
+        </div>
       </div>
     </div>
   );

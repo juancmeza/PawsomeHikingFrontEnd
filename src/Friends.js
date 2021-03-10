@@ -1,11 +1,11 @@
 import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
-import Map from './Map.js';
 import Carousel from './Carousel.js'
 import PetsOutlinedIcon from '@material-ui/icons/PetsOutlined';
 import Signup from './Signup.js'
 import Login from './Login.js'
 import { Row, Col, Button} from "react-bootstrap"
+import Paws from './Paws.js'
 
 
 
@@ -15,23 +15,37 @@ class Friends extends Component {
     display: null,
   }
 
+  displaySignup = () => {
+    this.setState({display: 'signup'})
+  }
+
+  displayLogin = () => {
+    this.setState({display: 'login'})
+  }
+
     render(){
         return(
             <div className='MainComponents'>
                 <Nav handleLogout={this.props.handleLogout}/>
+                <br></br>
                 <div>
-                  <PetsOutlinedIcon />
+                  <PetsOutlinedIcon fontSize='large'/>
                   <h3 className="text-white">PAWsome Hiking</h3>
                 </div>
-                <br></br>
-                <Button variant='outline-info'> Signup </Button><Button variant='outline-info'> Login </Button>
+                <Paws />
+                <Paws />
+                <Button variant='outline-info' onClick={this.displaySignup}> Signup </Button><Button variant='outline-info' onClick={this.displayLogin}> Login </Button>
                 <br></br>
                 <div>
-                  {this.state.signup ?
+                  {!this.state.display ?
+                  null :
+                  this.state.display === 'signup' ?
                   <Signup /> :
                   <Login />
                   }
-                </div>                
+                </div>
+                <Paws />
+                <Paws />                
                 <br></br>
                 <Carousel />
                 {/* <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>

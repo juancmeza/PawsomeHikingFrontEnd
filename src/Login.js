@@ -20,7 +20,7 @@ class Login extends React.Component {
         <Container>
           <Row>
             <Col>
-            <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-beach-and-dogs.jpg'/>
+            {/* <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-beach-and-dogs.jpg'/> */}
             </Col>
           </Row>
           <Row>
