@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Nav from './Nav';
 import { Row, Col, Button, Form} from "react-bootstrap"
+import { Link } from 'react-router-dom';
+
 
 const API = 'http://localhost:3000'
 
@@ -113,9 +115,11 @@ class EditDog extends Component {
                     }}
                   />
                   <br />
-                  <Button variant="dark" type="submit">
+                  <Link to='profile'>
+                    <Button variant="dark" type="submit">
                     Submit
-                  </Button>
+                    </Button>
+                  </Link>
                 </Form>
               </Col>
               <Col></Col>

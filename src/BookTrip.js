@@ -4,6 +4,7 @@ import { Row, Col, Button} from "react-bootstrap"
 import FormGroup from '@material-ui/core/FormGroup';
 import DogCheckbox from './DogCheckbox.js';
 import Map from './Map.js'
+import TripCard from './TripCard.js'
 
 
 import {
@@ -75,33 +76,11 @@ class BookTrip extends Component {
                   <br></br>
                 </div>
                 <Row>
+                  <Col></Col>
                   <Col>
-                    <div>
-                      Trip to: {location}
-                    </div>
+                    <TripCard trip={this.props.chosenTrip} /> 
                   </Col>
-                  <Col>
-                    <div>
-                      Date: {date} 
-                    </div>
-                  </Col>
-                  <Col>
-                    <div>
-                      Time: {time} 
-                    </div>
-                  </Col>
-                </Row>
-                <br></br>
-                <Row>
-                  <Col>
-                    <h6>Drop off location: 720 Steiner Street</h6>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <Map location={mapLocation} zoomLevel={12.9}/>
-                  </Col>
-                  <br></br>
+                  <Col></Col>
                 </Row>
                 <br></br>
                 <Row>
@@ -129,6 +108,19 @@ class BookTrip extends Component {
                     <div></div>
                   </Col>
                 </Row>
+                <br></br>
+                <Row>
+                  <Col>
+                    <h5>Drop off location: 720 Steiner Street</h5>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Map location={mapLocation} zoomLevel={12.9}/>
+                  </Col>
+                  <br></br>
+                </Row>
+                <br></br>
                 <Row>
                   <Col>
                     {this.props.user.dogs.length > 0 ?

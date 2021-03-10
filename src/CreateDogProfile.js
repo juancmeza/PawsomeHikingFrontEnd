@@ -2,12 +2,8 @@ import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
 import { Container, Row, Col, Button, Form} from "react-bootstrap"
 import ProfileCard from './ProfileCard.js';
-import {
-    BrowserRouter as Router,
-    Route,
-    Redirect,
-    Switch,
-  } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 
 
   const API = 'http://localhost:3000'
@@ -108,7 +104,7 @@ class CreateDogProfile extends Component {
                         }}
                       />
                       <br />
-                      <Button variant="dark" type="submit">Submit</Button>
+                      <Link to='profile'><Button variant="dark" type="submit">Submit</Button></Link>
                     </Form>
                   </Col>
                   <Col></Col>

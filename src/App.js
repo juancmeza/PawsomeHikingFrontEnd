@@ -78,7 +78,6 @@ class App extends Component {
   })
   .then((resp) => resp.json())
   .then((data) => {
-    console.log(data)
     this.setState({
       trips: data,
       selectedTrip: data[0]
