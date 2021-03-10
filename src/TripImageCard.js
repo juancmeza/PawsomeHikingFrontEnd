@@ -28,7 +28,7 @@ export default function TripImageCard() {
         <CardMedia
           className={classes.media}
           image="http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg"
-          title="Contemplative Reptile"
+          title="Trip"
         />
     </Card>
   );

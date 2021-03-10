@@ -23,27 +23,35 @@ export default function Carousel() {
         style={{ position: 'absolute' }}
       >
         <Slide
-          media={<img src='https://i.pinimg.com/originals/89/94/ea/8994eaf9b1f80e21c9f44e544998f714.jpg'/>}
-          mediaBackgroundStyle={{ backgroundColor: blue[400] }}
-          style={{ backgroundColor: blue[600] }}
-          title='This is a very cool feature'
-          subtitle='Just using this will blow your mind.'
-        />
-        <Slide
-          media={<img src='http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png' />}
-          mediaBackgroundStyle={{ backgroundColor: blue[100] }}
-          style={{ backgroundColor: blue[600] }}
-          title='Ever wanted to be popular?'
-          subtitle='Well just mix two colors and your are good to go!'
-        />
-        <Slide
-          media={<img src='http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png' />}
-          mediaBackgroundStyle={{ backgroundColor: "#69DFFB" }}
+          media={<img src='https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2997&h=1499&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2019%2F07%2F12164029%2Fpetting-dog-getty-0719.jpg'/>}
+          mediaBackgroundStyle={{ backgroundColor: "#268397" }}
           style={{ backgroundColor: grey[900] }}
-          title='May the force be with you'
-          subtitle='The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.'
+          title='Dogs make us happier people.'
+          subtitle='We should make them happy too.'
+        />
+        <Slide
+          media={<img src='https://www.k9ofmine.com/wp-content/uploads/2016/02/dog-pulling-on-a-leash-1150x700.jpg'/>}
+          mediaBackgroundStyle={{ backgroundColor: "#268397" }}
+          style={{ backgroundColor: grey[900] }}
+          title="A short walk doesn't cut it."
+          subtitle="And you can't ever stay long enough at the park."
+        />
+        <Slide
+          media={<img src='https://ucarecdn.com/067bb93b-221c-4d23-ae61-26ba7ced96fb/-/resize/1000x/-/format/auto/-/progressive/yes/-/quality/lightest/'/>}
+          mediaBackgroundStyle={{ backgroundColor: "#268397" }}
+          style={{ backgroundColor: grey[900] }}
+          title="Too busy?"
+          subtitle='Let us take your dog(s) on one of our hiking trips.'
+        />
+        <Slide
+          media={<img src='https://www.greenmountainclub.org/wp-content/uploads/2019/08/ladder_AmyPotter.jpg'/>}
+          mediaBackgroundStyle={{ backgroundColor: "#268397" }}
+          style={{ backgroundColor: grey[900] }}
+          title='Sign up!'
+          subtitle='And learn more about our options and upcoming trips.'
         />
       </AutoRotatingCarousel>
     </div>
   )
 }
+

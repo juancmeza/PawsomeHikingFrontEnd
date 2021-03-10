@@ -48,7 +48,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#11181a',
   },
 }));
 
@@ -62,7 +62,7 @@ export default function ProfileTab({user, selectTrip, selectDog}) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ backgroundColor: '#268397' }}>
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
           <Tab label="My Info" {...a11yProps(0)} />
           <Tab label="My Trips" {...a11yProps(1)} />
@@ -97,6 +97,13 @@ export default function ProfileTab({user, selectTrip, selectDog}) {
           </Col>
         </Row>
       </TabPanel>
+      <div>
+        <Row>
+          <Col>
+            {/* <img src='https://lh3.googleusercontent.com/proxy/7P6fJhGmAKdl3mXN4jF6pSbjCs6SlQh7ccsmIxfnaIATUkyFdt4S2d0EVIO02KrgnS-t5pEpb8Io8lAj131Gv6GRUYOja5M' /> */}
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 }

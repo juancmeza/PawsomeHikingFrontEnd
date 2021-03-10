@@ -124,7 +124,7 @@ class BookTrip extends Component {
                 <Row>
                   <Col>
                     {this.props.user.dogs.length > 0 ?
-                      <Button variant='outline-info' onClick={() => this.bookTrip()}>Book Trip!</Button> :
+                      <Link to='/profile' ><Button variant='outline-info' onClick={() => this.bookTrip()}>Book Trip!</Button></Link> :
                       null                    
                     }
                   </Col>
