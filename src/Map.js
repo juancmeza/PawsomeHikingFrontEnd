@@ -10,13 +10,16 @@ const LocationPin = ({ text }) => (
   </div>
 )
 
+const KEY = process.env.REACT_APP_API_KEY
+
 const Map = ({ location, zoomLevel }) => (
   <div className="map">
     <h2 className="map-h2"></h2>
 
     <div className="google-map">
+      <div>{console.log(process.env.REACT_APP_API_KEY)}</div>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: '' }}
+        bootstrapURLKeys={{ key: `` }}
         defaultCenter={location}
         defaultZoom={zoomLevel}
       >

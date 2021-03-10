@@ -2,21 +2,34 @@ import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
 import Map from './Map.js';
 import Carousel from './Carousel.js'
+import PetsOutlinedIcon from '@material-ui/icons/PetsOutlined';
+import Signup from './Signup.js'
+import Login from './Login.js'
+import { Row, Col, Button} from "react-bootstrap"
 
 
-const location = {
-  address: 'Some addres',
-  lat: 37.42216,
-  lng: -122.08427,
-}
 
 class Friends extends Component {
+
+  state = {
+    display: null,
+  }
 
     render(){
         return(
             <div className='MainComponents'>
                 <Nav handleLogout={this.props.handleLogout}/>
-                <h5>You have reached the Friends Component</h5>
+                <div>
+                  <PetsOutlinedIcon />
+                  <h3 className="text-white">PAWsome Hiking</h3>
+                </div>
+                <Button variant='outline-info'> Signup </Button>
+                <div>
+                  {this.state.signup ?
+                  <Signup /> :
+                  <Login />
+                  }
+                </div>                
                 <br></br>
                 <Carousel />
                 {/* <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>

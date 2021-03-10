@@ -18,6 +18,8 @@ import {
   Switch,
 } from "react-router-dom";
 
+console.log(process.env.REACT_APP_API_KEY)
+
 const API = "http://localhost:3000";
 
 class App extends Component {
@@ -166,7 +168,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/'>
             {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout} chosenTrip={this.state.selectedTrip} user={this.state.user}/>
+            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user}/>
             :
             <Login handleLoginOrSignup={this.handleSignup}/>
             }

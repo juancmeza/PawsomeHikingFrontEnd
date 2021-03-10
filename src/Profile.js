@@ -17,7 +17,7 @@ class Profile extends Component {
         return(
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
-                <br></br>
+                {/* <br></br> */}
                 <ProfileTab user={this.props.user} selectTrip={this.props.selectTrip} selectDog={this.props.selectDog}/>
                 <br></br>
             </div>

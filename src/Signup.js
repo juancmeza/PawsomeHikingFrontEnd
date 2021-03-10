@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
-class Login extends React.Component {
+class Signup extends React.Component {
   state = {
     username: "",
     password: "",
@@ -71,4 +71,4 @@ class Login extends React.Component {
     );
   }
 }
-export default Login;
+export default Signup;

@@ -2,13 +2,17 @@ import React, {Component} from 'react'
 import './App.css';
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
+import PetsOutlinedIcon from '@material-ui/icons/PetsOutlined';
 
 
 class Nav extends Component {
   render() {
     return(
       <nav className="navbar">
-        <h3 className="text-white"> Logo goes here </h3>
+        <div>
+          <PetsOutlinedIcon />
+          <h3 className="text-white">PAWsome Hiking</h3>
+        </div>
         <div className ="NavStuff">
           <Link to="/">
             <h5 className="text-white nav-text"> Home </h5>
