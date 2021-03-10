@@ -3,6 +3,7 @@ import Nav from './Nav';
 import { Container, Row, Col, Button, Form} from "react-bootstrap"
 import ProfileCard from './ProfileCard.js';
 import { Link } from 'react-router-dom';
+import Paws from './Paws.js'
 
 
 
@@ -48,6 +49,7 @@ class CreateDogProfile extends Component {
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
                 <br></br>
+                <Paws />
                 <Row>
                   <Col></Col>
                   <Col>
@@ -109,6 +111,9 @@ class CreateDogProfile extends Component {
                   </Col>
                   <Col></Col>
                 </Row>
+                <Paws />
+                <Paws />
+
             </div>
         )
     }

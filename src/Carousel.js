@@ -14,7 +14,7 @@ export default function Carousel() {
   return( 
 
     <div style={{ position: 'relative', width: '100%', height: 500 }}>
-      <Button onClick={() => setState({ open: true })}>See Slides</Button>
+      <Button variant='outlined' color="#268397" onClick={() => setState({ open: true })}>See Slides</Button>
       <AutoRotatingCarousel
         label='Get started'
         open={state.open}

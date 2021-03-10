@@ -6,6 +6,10 @@ class Signup extends React.Component {
   state = {
     username: "",
     password: "",
+    first_name:"",
+    last_name:'',
+    email:'',
+    phone_number:'',
   };
   handleChange = (e) => {
     let { name, value } = e.target;
@@ -30,15 +34,15 @@ class Signup extends React.Component {
               <Form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  this.props.handleLoginOrSignup(this.state);
+                  this.props.handleSignup(this.state);
                 }}
               >
-                <Form.Label style={{ color: "#E4E6EB" }}>Password</Form.Label>
+                <Form.Label style={{ color: "#E4E6EB" }}>First Name</Form.Label>
                 <Form.Control
                   onChange={this.handleChange}
-                  type="password"
-                  name="password"
-                  placeholder="Password..."
+                  type="text"
+                  name="first_name"
+                  placeholder="First Name"
                   style={{
                     backgroundColor: "#181818",
                     borderColor: "#0c7487",
@@ -46,12 +50,12 @@ class Signup extends React.Component {
                   }}
                 />
                 <br />
-                <Form.Label style={{ color: "#E4E6EB" }}>Password</Form.Label>
+                <Form.Label style={{ color: "#E4E6EB" }}>Last Name</Form.Label>
                 <Form.Control
                   onChange={this.handleChange}
-                  type="password"
-                  name="password"
-                  placeholder="Password..."
+                  type="text"
+                  name="last_name"
+                  placeholder="Last Name"
                   style={{
                     backgroundColor: "#181818",
                     borderColor: "#0c7487",
@@ -65,7 +69,7 @@ class Signup extends React.Component {
                   onChange={this.handleChange}
                   type="text"
                   name="username"
-                  placeholder="Username..."
+                  placeholder="Username"
                   style={{
                     backgroundColor: "#181818",
                     borderColor: "#0c7487",
@@ -78,7 +82,37 @@ class Signup extends React.Component {
                   onChange={this.handleChange}
                   type="password"
                   name="password"
-                  placeholder="Password..."
+                  placeholder="Password"
+                  style={{
+                    backgroundColor: "#181818",
+                    borderColor: "#0c7487",
+                    color: "#C0C0C0",
+                  }}
+                />
+                <br />
+                <Form.Label style={{ color: "#E4E6EB" }}>
+                  Phone Number
+                </Form.Label>
+                <Form.Control
+                  onChange={this.handleChange}
+                  type="text"
+                  name="phone_number"
+                  placeholder="Phone Number"
+                  style={{
+                    backgroundColor: "#181818",
+                    borderColor: "#0c7487",
+                    color: "#C0C0C0",
+                  }}
+                />
+                <br />
+                <Form.Label style={{ color: "#E4E6EB" }}>
+                  E-mail
+                </Form.Label>
+                <Form.Control
+                  onChange={this.handleChange}
+                  type="text"
+                  name="email"
+                  placeholder="E-mail"
                   style={{
                     backgroundColor: "#181818",
                     borderColor: "#0c7487",

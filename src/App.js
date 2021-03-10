@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import './App.css';
+import Main from './Main.js'
 import Login from "./Login.js";
 import Home from "./Home.js";
 import UpcomingTrips from "./UpcomingTrips.js";
@@ -170,49 +171,49 @@ class App extends Component {
             {this.state.loggedIn?
             <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user}/>
             :
-            <Login handleLoginOrSignup={this.handleSignup}/>
+            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
             </Route>
             <Route path='/upcomingTrips'>
             {this.state.loggedIn?
             <UpcomingTrips handleLogout={this.handleLogout} allTrips={this.state.trips} user={this.state.user} chosenTrip={this.state.selectedTrip} selectTrip={this.selectTrip}/>
             :
-            <Login handleLoginOrSignup={this.handleLogin}/>
+            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
             </Route>
             <Route path='/profile'>
             {this.state.loggedIn?
             <Profile handleLogout={this.handleLogout} user={this.state.user} selectTrip={this.selectTrip} selectDog={this.selectDog}/>
             :
-            <Login handleLoginOrSignup={this.handleLogin}/>
+            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
             </Route>
             <Route path='/friends'>
             {this.state.loggedIn?
             <Friends handleLogout={this.handleLogout} user={this.state.user}/>
             :
-            <Login handleLoginOrSignup={this.handleLogin}/>
+            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
             </Route>
             <Route path='/createDogProfile'>
             {this.state.loggedIn ?
             <CreateDogProfile handleLogout={this.handleLogout} user={this.state.user} persistUser={this.persistUser} setUser={this.setUser}/>
             :
-            <Login handleLoginOrSignup={this.handleLogin}/>
+            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
             </Route>
             <Route path='/bookTrip'>
             {this.state.loggedIn ?
             <BookTrip handleLogout={this.handleLogout} user={this.state.user} chosenTrip={this.state.selectedTrip} setUser={this.setUser}/>
             :
-            <Login handleLoginOrSignup={this.handleLogin}/>
+            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
             </Route>
             <Route path='/editDog'>
             {this.state.loggedIn ?
             <EditDog handleLogout={this.handleLogout} user={this.state.user} setUser={this.setUser} chosenDog={this.state.chosenDog}/>
             :
-            <Login handleLoginOrSignup={this.handleLogin}/>
+            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
             </Route>
           </Switch>

@@ -4,12 +4,7 @@ import { Container, Row, Col, Button, Form, Alert, Card} from "react-bootstrap"
 import SimpleReactCalendar from 'simple-react-calendar'
 import BookTrip from './BookTrip.js'
 import Trips from './Trips.js'
-import {
-    BrowserRouter as Router,
-    Route,
-    Redirect,
-    Switch,
-  } from "react-router-dom";
+import Paws from './Paws.js'
 
 
 class UpcomingTrips extends Component {
@@ -17,12 +12,15 @@ class UpcomingTrips extends Component {
 
     render(){
         return(
-          <div>
+          <div className='MainComponents'>
             <Nav handleLogout={this.props.handleLogout}/>
             <br></br>
+            <Paws />
             <div>
                 <Trips user={this.props.user} trips={this.props.allTrips} userTripsOnly={false} selectTrip={this.props.selectTrip}/>
             </div>
+            <Paws />
+            <Paws />
           </div>
         )
     }

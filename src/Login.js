@@ -29,7 +29,7 @@ class Login extends React.Component {
               <Form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  this.props.handleLoginOrSignup(this.state);
+                  this.props.handleLogin(this.state);
                 }}
               >
                 <Form.Label style={{ color: "#E4E6EB" }}>

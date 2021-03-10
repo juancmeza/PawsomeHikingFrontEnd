@@ -91,9 +91,9 @@ export default function ProfileTab({user, selectTrip, selectDog}) {
               </div>
             </div>}
           <Paws />
+          <Paws />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <Link to="/createDogProfile"><Button variant='outline-info'> Create dog profile </Button></Link>
           <Paws />
           {user.dogs.length > 0 ?
             <Row><br></br>{user.dogs.map(dog => <Col><DogCard dog={dog} selectDog={selectDog}/></Col>)}</Row> :
@@ -101,9 +101,11 @@ export default function ProfileTab({user, selectTrip, selectDog}) {
           }
           <Row>
             <Col>
-            <Paws />
+            <Link to="/createDogProfile"><Button variant='outline-info'> Create dog profile </Button></Link>
             </Col>
           </Row>
+          <Paws />
+          <Paws />
         </TabPanel>
         <div>
           <Row>
