@@ -1,16 +1,12 @@
-import React, {Component, Fragment} from 'react';
-import Nav from './Nav';
-import { Container, Row, Col, Button, Form, Alert} from "react-bootstrap"
-import SimpleReactCalendar from 'simple-react-calendar'
+import React, {Component} from 'react';
+import { Container, Row, Col, Button} from "react-bootstrap"
 import Map from './Map.js'
 import TripCard from './TripCard.js'
-import TripImageCard from './TripImageCard.js'
+import Paws from './Paws.js'
 import {
     BrowserRouter as Router,
-    Route,
     Link,
-    Redirect,
-    Switch,
+
   } from "react-router-dom";
 
 let mapLocation = {
@@ -48,6 +44,7 @@ class TripDetails extends Component {
                         </Col>
                         <Col></Col>
                     </Row>
+                    <Paws />
                     <br></br>
                     <Row>
                         <Col>

@@ -73,7 +73,7 @@ export default function ProfileTab({user, selectTrip, selectDog}) {
         </AppBar>
         <TabPanel value={value} index={0}>
           <Paws />
-          <ProfileCard user={user}/>
+          <div justify='center'><ProfileCard user={user}/></div>
           <Paws />
           <Paws />
         </TabPanel>
@@ -100,6 +100,7 @@ export default function ProfileTab({user, selectTrip, selectDog}) {
             <Row><br></br>{user.dogs.map(dog => <Col><DogCard dog={dog} selectDog={selectDog}/></Col>)}</Row> :
             <div>You have not created a profile for your dog(s)</div>
           }
+          <br></br>
           <Row>
             <Col>
             <Link to="/createDogProfile"><Button variant='outline-info'> Create dog profile </Button></Link>

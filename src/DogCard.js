@@ -24,25 +24,25 @@ export default function DogCard({dog, selectDog}) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} variant="outlined">
-      <CardContent>
-        <Typography className={classes.title} >
-          Name: {dog.name}
-        </Typography>
-        <Typography className={classes.title} >
-          Weight: {dog.weight}
-        </Typography>
-        <Typography className={classes.title} >
-          Breed: {dog.breed}
-        </Typography>
-        <Typography className={classes.title} >
-          Age: {dog.age}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Link to ='editDog'><Button id={dog.id} variant='outline-info' onClick={() => selectDog(dog.id)}>Edit</Button></Link>
-      </CardActions>
-    </Card>
+      <Card className={classes.root} variant="outlined">
+        <CardContent>
+          <Typography className={classes.title} >
+            Name: {dog.name}
+          </Typography>
+          <Typography className={classes.title} >
+            Weight: {dog.weight}
+          </Typography>
+          <Typography className={classes.title} >
+            Breed: {dog.breed}
+          </Typography>
+          <Typography className={classes.title} >
+            Age: {dog.age}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Link to ='editDog'><Button id={dog.id} variant='outline-info' onClick={() => selectDog(dog.id)}>Edit</Button></Link>
+        </CardActions>
+      </Card>
   );
 }
 

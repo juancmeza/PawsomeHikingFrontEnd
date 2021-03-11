@@ -1,13 +1,12 @@
 import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
-import { Container, Row, Col, Button, Form} from "react-bootstrap"
-import ProfileCard from './ProfileCard.js';
+import { Row, Col, Button, Form} from "react-bootstrap"
 import { Link } from 'react-router-dom';
 import Paws from './Paws.js'
 
 
 
-  const API = 'http://localhost:3000'
+const API = 'http://localhost:3000'
 
 class CreateDogProfile extends Component {
 
@@ -16,11 +15,10 @@ class CreateDogProfile extends Component {
     weight:'',
     breed:'',
     age:'',
-    user_id: this.props.user.id
+    user_id: this.props.user.id,
   }
 
   createDog = (dog) => {
-
       let newDog = {
         dog: dog
       } 
@@ -53,7 +51,9 @@ class CreateDogProfile extends Component {
                 <Row>
                   <Col></Col>
                   <Col>
-                    <Form onSubmit={(e) => {e.preventDefault(); this.createDog(this.state);}}>
+                    <Form onSubmit={(e) => {
+                      e.preventDefault(); 
+                      this.createDog(this.state)}}>
                       <Form.Label style={{ color: "#E4E6EB" }}>Name</Form.Label>
                       <Form.Control
                       onChange={this.handleChange}
@@ -106,7 +106,7 @@ class CreateDogProfile extends Component {
                         }}
                       />
                       <br />
-                      <Link to='profile'><Button variant="outline-info" type="submit">Submit</Button></Link>
+                      <Button variant="outline-info" type="submit">Submit</Button>
                     </Form>
                   </Col>
                   <Col></Col>

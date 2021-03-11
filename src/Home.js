@@ -3,6 +3,7 @@ import Nav from './Nav';
 import { Container, Row, Col, Button, Form, Alert} from "react-bootstrap"
 import TripDetails from './TripDetails.js'
 import BookTrip from './BookTrip.js'
+import Paws from './Paws.js'
 import {
     BrowserRouter as Router,
     Route,
@@ -29,6 +30,7 @@ class Home extends Component {
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
                 <br></br>
+                <Paws />
                 <div>
                   <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} />
                 </div>

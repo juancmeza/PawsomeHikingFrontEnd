@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Nav from './Nav';
 import { Row, Col, Button, Form} from "react-bootstrap"
 import { Link } from 'react-router-dom';
+import Paws from './Paws.js'
 
 
 const API = 'http://localhost:3000'
@@ -52,6 +53,7 @@ class EditDog extends Component {
             <Nav handleLogout={this.props.handleLogout}/>
             <br></br>
             </div>
+            <Paws />
             <Row>
               <Col></Col>
               <Col>
@@ -71,7 +73,7 @@ class EditDog extends Component {
                     placeholder={name}
                     style={{
                       backgroundColor: "#181818",
-                      borderColor: "#333333",
+                      borderColor: "#0c7487",
                       color: "#C0C0C0",
                     }}
                   />
@@ -84,7 +86,7 @@ class EditDog extends Component {
                     placeholder={weight}
                     style={{
                       backgroundColor: "#181818",
-                      borderColor: "#333333",
+                      borderColor: "#0c7487",
                       color: "#C0C0C0",
                     }}
                   />
@@ -97,7 +99,7 @@ class EditDog extends Component {
                     placeholder={breed}
                     style={{
                       backgroundColor: "#181818",
-                      borderColor: "#333333",
+                      borderColor: "#0c7487",
                       color: "#C0C0C0",
                     }}
                   />
@@ -110,20 +112,20 @@ class EditDog extends Component {
                     placeholder={age}
                     style={{
                       backgroundColor: "#181818",
-                      borderColor: "#333333",
+                      borderColor: "#0c7487",
                       color: "#C0C0C0",
                     }}
                   />
                   <br />
-                  <Link to='profile'>
-                    <Button variant="dark" type="submit">
+                    <Button variant="outline-info" type="submit">
                     Submit
                     </Button>
-                  </Link>
                 </Form>
               </Col>
               <Col></Col>
             </Row>
+            <Paws />
+            <Paws />
       </div>
     )
   }

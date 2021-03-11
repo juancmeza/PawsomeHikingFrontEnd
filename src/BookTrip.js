@@ -5,6 +5,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import DogCheckbox from './DogCheckbox.js';
 import Map from './Map.js'
 import TripCard from './TripCard.js'
+import Paws from './Paws.js'
 
 
 import {
@@ -85,7 +86,7 @@ class BookTrip extends Component {
                 <br></br>
                 <Row>
                   <Col>
-                    <h6>Select dog(s) going on this trip:</h6>
+                    <h5>Select dog(s) going on this trip:</h5>
                   </Col>
                 </Row>
                 <Row>
@@ -96,11 +97,11 @@ class BookTrip extends Component {
                     <FormGroup>
                       {this.props.user.dogs.length > 0 ?
                        this.createCheckBoxes() :
-                       <div>
+                      <div>
                          <div>You have not created a profile for your dog(s)</div>
                          <br></br>
                          <Link to="/createDogProfile"><Button variant='outline-info'> Create dog profile </Button></Link>
-                        </div>
+                      </div>
                       }
                     </FormGroup>
                   </Col>
@@ -108,18 +109,23 @@ class BookTrip extends Component {
                     <div></div>
                   </Col>
                 </Row>
-                <br></br>
-                <Row>
-                  <Col>
-                    <h5>Drop off location: 720 Steiner Street</h5>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <Map location={mapLocation} zoomLevel={12.9}/>
-                  </Col>
-                  <br></br>
-                </Row>
+                <Paws />
+                {this.props.user.dogs.length > 0 ?
+                <div>
+                  <Row>
+                    <Col>
+                      <h5>Drop off location: 720 Steiner Street</h5>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Map location={mapLocation} zoomLevel={12.9}/> :
+                    </Col>
+                    <br></br>
+                  </Row>
+                </div> :
+                null
+                }
                 <br></br>
                 <Row>
                   <Col>
