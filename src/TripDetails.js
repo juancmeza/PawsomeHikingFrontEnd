@@ -38,26 +38,28 @@ class TripDetails extends Component {
                     </Row>
                     <br></br>
                     <Row>
-                        <Col></Col>
                         <Col>
+                          <br></br>
+                          <br></br>
                           <TripCard trip={this.props.chosenTrip} />
                         </Col>
-                        <Col></Col>
+                        <Col>
+                          <Map location={mapLocation} zoomLevel={12.9}/>
+                        </Col>
                     </Row>
                     <Paws />
-                    <br></br>
-                    <Row>
+                    {/* <Row>
                         <Col>
                         <Map location={mapLocation} zoomLevel={12.9}/>
                         </Col>
-                    </Row>
+                    </Row> */}
                     <br></br>
                     <Row>
                       <Col>
                           <Link to='/bookTrip'><Button variant='outline-info'>Sign my puppy up!</Button></Link>
                       </Col>
                     </Row>
-                    <br></br>
+                    <Paws />
                 </Container>
             </div>
         )

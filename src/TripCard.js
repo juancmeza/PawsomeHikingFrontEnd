@@ -9,28 +9,42 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 450,
+    maxWidth: 445,
   },
   title: {
-    fontSize: 16,
+    fontSize: 18,
   },
   pos: {
     marginBottom: 12,
   },
   media: {
-    height: 260,
+    height: 315,
   },
 });
 
-// const formatDate(inputDate) {
-//   var date = new Date(inputDate);
-//   if (!isNaN(date.getTime())) {
-//     // Months use 0 index.
-//     return (
-//       date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear()
-//     );
-//   }
-// }
+const formatTime = (inputTime) => {
+
+  const options = {
+    timeZone:"Canada/Central",
+    hour12 : true,
+    hour:  "numeric",
+    minute: "numeric",seconds:"numeric"
+ }
+
+ return new Date(inputTime).toLocaleTimeString("en-US",options)
+
+}
+
+
+const formatDate = (inputDate) => {
+  var date = new Date(inputDate);
+  if (!isNaN(date.getTime())) {
+    // Months use 0 index.
+    return (
+      date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear()
+    );
+  }
+}
 
 export default function TripCard({trip}) {
   const classes = useStyles();
@@ -42,10 +56,10 @@ export default function TripCard({trip}) {
           Location: {trip.location}
         </Typography>
         <Typography className={classes.title} >
-          Date: {trip.date}
+          Date: {formatDate(trip.date)}
         </Typography>
         <Typography className={classes.title} >
-          Time: {trip.time}
+          Time: {formatTime(trip.time)}
         </Typography>
         <CardMedia
           className={classes.media}
