@@ -1,10 +1,8 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import Nav from './Nav';
 import { Row, Col, Button, Form} from "react-bootstrap"
-import { Link } from 'react-router-dom';
 import Paws from './Paws.js'
-
-
+import {withRouter} from 'react-router-dom'
 
 const API = 'http://localhost:3000'
 
@@ -32,7 +30,11 @@ class CreateDogProfile extends Component {
         body: JSON.stringify(newDog)
       })
       .then(res => res.json())
-      .then(data => this.props.setUser(data.user))
+      .then(data => {
+        this.props.setUser(data.user)
+        this.props.history.push('/profile')
+      }
+    )
   }
 
   handleChange = (e) => {
@@ -43,6 +45,7 @@ class CreateDogProfile extends Component {
   };
 
     render(){
+      console.log(this.props)
         return(
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
@@ -119,4 +122,4 @@ class CreateDogProfile extends Component {
     }
 }
 
-export default CreateDogProfile
+export default withRouter(CreateDogProfile)

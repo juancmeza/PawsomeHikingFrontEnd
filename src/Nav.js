@@ -3,7 +3,9 @@ import './App.css';
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
 import PetsOutlinedIcon from '@material-ui/icons/PetsOutlined';
-
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import FilterHdrOutlinedIcon from '@material-ui/icons/FilterHdrOutlined';
+import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 
 class Nav extends Component {
   render() {
@@ -15,15 +17,18 @@ class Nav extends Component {
         </div>
         <div className ="NavStuff">
           <Link to="/">
+            <HomeOutlinedIcon />
             <h5 className="text-white nav-text"> Home </h5>
           </Link>
           <Link to="/upcomingTrips">
+            <FilterHdrOutlinedIcon />
             <h5 className = "text-white nav-text"> Upcoming Trips </h5>
           </Link>
           {/* <Link to="/friends">
             <h5 className = "text-white nav-text"> Friends </h5>
           </Link> */}
           <Link to="/profile">
+            <PersonOutlineOutlinedIcon />
             <h5 className = "text-white nav-text"> Profile </h5>
           </Link>
           <div>

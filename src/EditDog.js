@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import Nav from './Nav';
 import { Row, Col, Button, Form} from "react-bootstrap"
-import { Link } from 'react-router-dom';
 import Paws from './Paws.js'
+import {withRouter} from 'react-router-dom'
+
 
 
 const API = 'http://localhost:3000'
@@ -40,7 +41,11 @@ class EditDog extends Component {
       body: JSON.stringify(newDog)
     })
     .then(res => res.json())
-    .then(data => this.props.setUser(data.user))
+    .then(data => {
+      this.props.setUser(data.user)
+      this.props.history.push('/profile')
+      }
+    )
   }
   
   render() {
@@ -131,4 +136,4 @@ class EditDog extends Component {
   }
 }
 
-export default EditDog
+export default withRouter(EditDog)
