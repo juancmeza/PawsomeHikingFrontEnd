@@ -63,3 +63,9 @@ nav {
   width: 70%;
   list-style: none;
 }
+
+.refusesToCenter {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}

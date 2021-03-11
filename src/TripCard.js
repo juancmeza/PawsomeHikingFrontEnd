@@ -26,7 +26,7 @@ export default function TripCard({trip}) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} variant="outlined">
+    <Card className={classes.root} variant="outlined" style={{ backgroundColor: "#268397" }}>
       <CardContent>
         <Typography className={classes.title} >
           Location: {trip.location}

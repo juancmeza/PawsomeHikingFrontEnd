@@ -75,6 +75,7 @@ export default function ProfileTab({user, selectTrip, selectDog}) {
           <Paws />
           <ProfileCard user={user}/>
           <Paws />
+          <Paws />
         </TabPanel>
         <TabPanel value={value} index={1}>
           <Paws />

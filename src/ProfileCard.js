@@ -22,27 +22,29 @@ export default function ProfileCard({user}) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} variant="outlined">
-      <CardContent>
-        <Typography className={classes.title} >
-          Username: {user.username}
-        </Typography>
-        <Typography className={classes.title} >
-          First Name: {user.first_name}
-        </Typography>
-        <Typography className={classes.title} >
-          Last Name: {user.last_name}
-        </Typography>
-        <Typography className={classes.title} >
-          Phone NUmber: {user.phone_number}
-        </Typography>
-        <Typography className={classes.title} >
-          e-mail: {user.email}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Edit</Button>
-      </CardActions>
-    </Card>
+    <div justify='center'>
+      <Card className={classes.root} variant="outlined" style={{ backgroundColor: "#268397" }} justify='center' alignItems='center'>
+        <CardContent>
+          <Typography className={classes.title} >
+            Username: {user.username}
+          </Typography>
+          <Typography className={classes.title} >
+            First Name: {user.first_name}
+          </Typography>
+          <Typography className={classes.title} >
+            Last Name: {user.last_name}
+          </Typography>
+          <Typography className={classes.title} >
+            Phone NUmber: {user.phone_number}
+          </Typography>
+          <Typography className={classes.title} >
+            E-mail: {user.email}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Edit</Button>
+        </CardActions>
+      </Card>
+    </div>
   );
 }

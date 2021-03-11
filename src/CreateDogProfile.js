@@ -62,7 +62,7 @@ class CreateDogProfile extends Component {
                       placeholder="Name"
                       style={{
                         backgroundColor: "#181818",
-                        borderColor: "#333333",
+                        borderColor: "#0c7487",
                         color: "#C0C0C0",
                       }}
                       />
@@ -75,7 +75,7 @@ class CreateDogProfile extends Component {
                         placeholder="Weight"
                         style={{
                           backgroundColor: "#181818",
-                          borderColor: "#333333",
+                          borderColor: "#0c7487",
                           color: "#C0C0C0",
                         }}
                       />
@@ -88,7 +88,7 @@ class CreateDogProfile extends Component {
                         placeholder="Breed"
                         style={{
                           backgroundColor: "#181818",
-                          borderColor: "#333333",
+                          borderColor: "#0c7487",
                           color: "#C0C0C0",
                         }}
                       />
@@ -101,12 +101,12 @@ class CreateDogProfile extends Component {
                         placeholder="Age"
                         style={{
                           backgroundColor: "#181818",
-                          borderColor: "#333333",
+                          borderColor: "#0c7487",
                           color: "#C0C0C0",
                         }}
                       />
                       <br />
-                      <Link to='profile'><Button variant="dark" type="submit">Submit</Button></Link>
+                      <Link to='profile'><Button variant="outline-info" type="submit">Submit</Button></Link>
                     </Form>
                   </Col>
                   <Col></Col>

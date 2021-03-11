@@ -20,9 +20,9 @@ class Nav extends Component {
           <Link to="/upcomingTrips">
             <h5 className = "text-white nav-text"> Upcoming Trips </h5>
           </Link>
-          <Link to="/friends">
+          {/* <Link to="/friends">
             <h5 className = "text-white nav-text"> Friends </h5>
-          </Link>
+          </Link> */}
           <Link to="/profile">
             <h5 className = "text-white nav-text"> Profile </h5>
           </Link>
