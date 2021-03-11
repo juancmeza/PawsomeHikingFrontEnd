@@ -37,7 +37,7 @@ export default function Carousel() {
           subtitle="And you can't ever stay long enough at the park."
         />
         <Slide
-          media={<img src='https://ucarecdn.com/067bb93b-221c-4d23-ae61-26ba7ced96fb/-/resize/1000x/-/format/auto/-/progressive/yes/-/quality/lightest/'/>}
+          media={<img src='https://cdn10.bostonmagazine.com/wp-content/uploads/sites/2/2018/04/dogsplayfb.jpg'/>}
           mediaBackgroundStyle={{ backgroundColor: "#268397" }}
           style={{ backgroundColor: "#268397" }}
           title="Too busy?"

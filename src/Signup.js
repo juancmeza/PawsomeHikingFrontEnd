@@ -62,6 +62,7 @@ class Signup extends React.Component {
                     color: "#C0C0C0",
                   }}
                 />
+                <br></br>
                 <Form.Label style={{ color: "#E4E6EB" }}>
                   Username
                 </Form.Label>
