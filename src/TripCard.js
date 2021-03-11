@@ -46,6 +46,22 @@ const formatDate = (inputDate) => {
   }
 }
 
+const getPicture = (tripLocation) => {
+  switch(tripLocation){
+    case 'Fort Funston':
+      return 'http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'
+    case 'Sigmund Stern Recreation Grove':
+      return 'https://i.pinimg.com/originals/89/94/ea/8994eaf9b1f80e21c9f44e544998f714.jpg'
+    case "Marshall's Beach":
+      return 'https://ucarecdn.com/067bb93b-221c-4d23-ae61-26ba7ced96fb/-/resize/1000x/-/format/auto/-/progressive/yes/-/quality/lightest/'
+    case "Lands End":
+      return 'https://greatruns.com/wp-content/uploads/2016/11/SanFran3.jpg' 
+    default:
+      return 'http://www.san-francisco-travel-secrets.com/images/fort-funston-beach-and-dogs.jpg'
+
+  }
+}
+
 export default function TripCard({trip}) {
   const classes = useStyles();
 
@@ -63,8 +79,8 @@ export default function TripCard({trip}) {
         </Typography>
         <CardMedia
           className={classes.media}
-          image="http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg"
-          title="Fort Funston"
+          image={getPicture(trip.location)}
+          title={trip.location}
         />
       </CardContent>
     </Card>

@@ -75,6 +75,7 @@ class BookTrip extends Component {
                 <div>
                   <Nav handleLogout={this.props.handleLogout}/>
                   <br></br>
+                  <Paws />
                 </div>
                 <Row>
                   <Col></Col>
@@ -135,6 +136,7 @@ class BookTrip extends Component {
                     }
                   </Col>
                 </Row>
+                <Paws />
             </div>
 
         )
