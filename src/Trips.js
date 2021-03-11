@@ -13,6 +13,29 @@ class Trips extends Component {
     bookTrip: false
   }
 
+  formatDate = (inputDate) => {
+    var date = new Date(inputDate);
+    if (!isNaN(date.getTime())) {
+      // Months use 0 index.
+      return (
+        date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear()
+      );
+    }
+  }
+
+  formatTime = (inputTime) => {
+
+    const options = {
+      timeZone:"Canada/Central",
+      hour12 : true,
+      hour:  "numeric",
+      minute: "numeric",seconds:"numeric"
+   }
+
+   return new Date(inputTime).toLocaleTimeString("en-US",options)
+
+  }
+
   showTrips = (trips) => {
 
     let uniqueTrips = [...new Set(trips)]
@@ -23,9 +46,9 @@ class Trips extends Component {
       const {id, date, location, time} = trip
       return (
       <Row>
-        <Col>{date}</Col>
+        <Col>{this.formatDate(date)}</Col>
         <Col>{location}</Col>
-        <Col>{time}</Col>
+        <Col>{this.formatTime(time)}</Col>
         <Col>
           <div>
               {this.props.userTripsOnly ?

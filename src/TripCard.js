@@ -22,6 +22,16 @@ const useStyles = makeStyles({
   },
 });
 
+// const formatDate(inputDate) {
+//   var date = new Date(inputDate);
+//   if (!isNaN(date.getTime())) {
+//     // Months use 0 index.
+//     return (
+//       date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear()
+//     );
+//   }
+// }
+
 export default function TripCard({trip}) {
   const classes = useStyles();
 
