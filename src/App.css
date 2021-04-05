@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background: #011015;
+  background: linear-gradient(to right, #032733, #416e7c);
   color: rgb(11, 148, 179);
 }
 
@@ -27,8 +27,8 @@
 }
 
 .MainComponents {
-  background: #011015;
-  /* color: white; */
+  /* background: linear-gradient(to right, #032733, #416e7c); */
+  color: #80b5c1;
 }
 
 .App-link {
@@ -48,8 +48,10 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #268397;
-  color: white;
+  background: -o-linear-gradient(#268397);
+  color: #80b5c1;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgb(42, 41, 41);
 }
 
 .navbar {

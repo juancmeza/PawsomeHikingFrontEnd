@@ -13,23 +13,23 @@ class Nav extends Component {
       <nav className="navbar">
         <div>
           <PetsOutlinedIcon />
-          <h3 className="text-white">PAWsome Hiking</h3>
+          <h3>PAWsome Hiking</h3>
         </div>
         <div className ="NavStuff">
           <Link to="/">
             <HomeOutlinedIcon />
-            <h5 className="text-white nav-text"> Home </h5>
+            <h5> Home </h5>
           </Link>
           <Link to="/upcomingTrips">
             <FilterHdrOutlinedIcon />
-            <h5 className = "text-white nav-text"> Upcoming Trips </h5>
+            <h5> Upcoming Trips </h5>
           </Link>
           {/* <Link to="/friends">
             <h5 className = "text-white nav-text"> Friends </h5>
           </Link> */}
           <Link to="/profile">
             <PersonOutlineOutlinedIcon />
-            <h5 className = "text-white nav-text"> Profile </h5>
+            <h5> Profile </h5>
           </Link>
           <div>
               <Button variant='light' onClick={this.props.handleLogout}>logout</Button>
