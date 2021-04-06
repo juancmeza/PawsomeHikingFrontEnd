@@ -17,18 +17,18 @@ class Nav extends Component {
         </div>
         <div className ="NavStuff">
           <Link to="/">
-            <HomeOutlinedIcon />
+            <HomeOutlinedIcon className='Icons'/>
             <h5 className='Desk-view'> Home </h5>
           </Link>
           <Link to="/upcomingTrips">
-            <FilterHdrOutlinedIcon />
+            <FilterHdrOutlinedIcon className="Icons"/>
             <h5 className='Desk-view'> Upcoming Trips </h5>
           </Link>
           {/* <Link to="/friends">
             <h5 className = "text-white nav-text"> Friends </h5>
           </Link> */}
           <Link to="/profile">
-            <PersonOutlineOutlinedIcon />
+            <PersonOutlineOutlinedIcon className="Icons"/>
             <h5 className='Desk-view'> Profile </h5>
           </Link>
           <div>
