@@ -70,6 +70,13 @@ nav {
   margin-top: 69px;
 }
 
+.Landing {
+  min-height: 90vh;
+  background-size: 100% auto;
+  background-repeat: no-repeat, repeat;
+  background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2997&h=1499&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2019%2F07%2F12164029%2Fpetting-dog-getty-0719.jpg");
+}
+
 @media screen and (max-width: 768px) {
   .Desk-view {
     display: none;

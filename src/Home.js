@@ -2,6 +2,13 @@ import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
 import TripDetails from './TripDetails.js'
 import Paws from './Paws.js'
+import {
+  BrowserRouter as Router,
+  Link,
+
+} from "react-router-dom";
+import { Container, Row, Col, Button} from "react-bootstrap"
+
 
 
 
@@ -22,8 +29,19 @@ class Home extends Component {
             <div>
                 <Nav handleLogout={this.props.handleLogout}/>
                 {/* <Paws /> */}
-                <div className='Top-for-bar'>
-                  <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} />
+                <div className='Landing'>
+                  <br></br>
+                  <div >
+                    <Row>
+                      <Col>
+                          <Link to='/bookTrip'><Button variant='outline-info'>Book a Trip!</Button></Link>
+                      </Col>
+                    </Row>
+                  </div>
+                  {/* <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} /> */}
+                </div>
+                <div>
+                  {/* <UpcomingTrips/> */}
                 </div>
             </div>
         )
