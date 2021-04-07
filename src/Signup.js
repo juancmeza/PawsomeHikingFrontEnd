@@ -37,7 +37,7 @@ class Signup extends React.Component {
                   this.props.handleSignup(this.state);
                 }}
               >
-                <Form.Label style={{ color: "#E4E6EB" }}>First Name</Form.Label>
+                <Form.Label style={{ color: "#80b5c1" }}>First Name</Form.Label>
                 <Form.Control
                   onChange={this.handleChange}
                   type="text"
@@ -50,7 +50,7 @@ class Signup extends React.Component {
                   }}
                 />
                 <br />
-                <Form.Label style={{ color: "#E4E6EB" }}>Last Name</Form.Label>
+                <Form.Label style={{ color: "#80b5c1" }}>Last Name</Form.Label>
                 <Form.Control
                   onChange={this.handleChange}
                   type="text"
@@ -63,7 +63,7 @@ class Signup extends React.Component {
                   }}
                 />
                 <br></br>
-                <Form.Label style={{ color: "#E4E6EB" }}>
+                <Form.Label style={{ color: "#80b5c1" }}>
                   Username
                 </Form.Label>
                 <Form.Control
@@ -78,7 +78,7 @@ class Signup extends React.Component {
                   }}
                 />
                 <br />
-                <Form.Label style={{ color: "#E4E6EB" }}>Password</Form.Label>
+                <Form.Label style={{ color: "#80b5c1" }}>Password</Form.Label>
                 <Form.Control
                   onChange={this.handleChange}
                   type="password"
@@ -91,7 +91,7 @@ class Signup extends React.Component {
                   }}
                 />
                 <br />
-                <Form.Label style={{ color: "#E4E6EB" }}>
+                <Form.Label style={{ color: "#80b5c1" }}>
                   Phone Number
                 </Form.Label>
                 <Form.Control
@@ -106,7 +106,7 @@ class Signup extends React.Component {
                   }}
                 />
                 <br />
-                <Form.Label style={{ color: "#E4E6EB" }}>
+                <Form.Label style={{ color: "#80b5c1" }}>
                   E-mail
                 </Form.Label>
                 <Form.Control

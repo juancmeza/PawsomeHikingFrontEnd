@@ -29,10 +29,9 @@ class Main extends Component {
                 <br></br>
                 <div>
                   <PetsOutlinedIcon fontSize='large'/>
-                  <h3 className="text-white">PAWsome Hiking</h3>
+                  <h3>PAWsome Hiking</h3>
                 </div>
-                <Paws />
-                <Paws />
+                {/* <Paws /> */}
                 <Button variant='outline-info' onClick={this.displaySignup}> Signup </Button><Button variant='outline-info' onClick={this.displayLogin}> Login </Button>
                 <br></br>
                 <div>
@@ -43,8 +42,7 @@ class Main extends Component {
                   <Login handleLogin={this.props.handleLogin}/>
                   }
                 </div>
-                <Paws />
-                <Paws />                
+                {/* <Paws /> */}
                 <br></br>
                 <Carousel />
                 {/* <img src='http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'/>

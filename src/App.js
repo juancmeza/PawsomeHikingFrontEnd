@@ -30,9 +30,9 @@ class App extends Component {
     user: null,
     loggedIn: false,
     selectedTrip: {
-      date: null,
-      location: null,
-      time: null
+      date: '',
+      location: '',
+      time: ''
     },
     trips: [],
     chosenDog: {
