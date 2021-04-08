@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import LocationCard from './LocationCard'
 
 class TripLocations extends Component {
 
   showLocations = (locations) => {
     return locations.map(location => {
-      return <div>{location}</div>
+      return <LocationCard/>
     })
   }
 
