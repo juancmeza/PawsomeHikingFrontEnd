@@ -35,6 +35,7 @@ class App extends Component {
       time: ''
     },
     trips: [],
+    locations: ['Fort Funston', 'Stern Grove', "Marshall's Beach", "Lands End" ],
     chosenDog: {
       name:'',
       weight:'',
@@ -169,7 +170,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/'>
             {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user}/>
+            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }

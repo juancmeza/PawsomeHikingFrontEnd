@@ -1,13 +1,19 @@
 import React, {Component} from 'react';
 
-
 class TripLocations extends Component {
+
+  showLocations = (locations) => {
+    return locations.map(location => {
+      return <div>{location}</div>
+    })
+  }
 
     render(){
         return(
             <div className='Locations'>
               <h2> Trip Locations </h2>
               <div>
+                {this.showLocations(this.props.locations)}
                 <div className='Funston'>
                   Fort Funston
                 </div>

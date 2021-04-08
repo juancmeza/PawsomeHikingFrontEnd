@@ -38,7 +38,7 @@ class Home extends Component {
                   {/* <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} /> */}
                 </div>
                 <div>
-                  <TripLocations />
+                  <TripLocations locations={this.props.locations}/>
                 </div>
             </div>
         )
