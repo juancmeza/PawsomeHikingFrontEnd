@@ -48,6 +48,7 @@ nav {
   color: #80b5c1;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgb(42, 41, 41);
+  opacity: 0.5;
 }
 
 .navbar {
@@ -70,11 +71,21 @@ nav {
   margin-top: 69px;
 }
 
+.Home {
+  color: #80b5c1;
+  min-height: 100vh;
+}
+
 .Landing {
-  min-height: 90vh;
-  background-size: 100% auto;
+  min-height: 105vh;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat, repeat;
   background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2997&h=1499&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2019%2F07%2F12164029%2Fpetting-dog-getty-0719.jpg");
+}
+
+.Locations {
+  width: 90%;
 }
 
 @media screen and (max-width: 768px) {

@@ -2,12 +2,9 @@ import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
 import TripDetails from './TripDetails.js'
 import Paws from './Paws.js'
-import {
-  BrowserRouter as Router,
-  Link,
-
-} from "react-router-dom";
+import { BrowserRouter as Router, Link} from "react-router-dom";
 import { Container, Row, Col, Button} from "react-bootstrap"
+import TripLocations from './TripLocations';
 
 
 
@@ -26,7 +23,7 @@ class Home extends Component {
     render(){
 
         return(
-            <div>
+            <div className='Home'>
                 <Nav handleLogout={this.props.handleLogout}/>
                 {/* <Paws /> */}
                 <div className='Landing'>
@@ -41,7 +38,7 @@ class Home extends Component {
                   {/* <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} /> */}
                 </div>
                 <div>
-                  {/* <UpcomingTrips/> */}
+                  <TripLocations />
                 </div>
             </div>
         )
