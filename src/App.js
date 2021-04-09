@@ -36,6 +36,7 @@ class App extends Component {
     },
     trips: [],
     locations: ['Fort Funston', 'Stern Grove', "Marshall's Beach", "Lands End" ],
+    selectedLocation:'All',
     chosenDog: {
       name:'',
       weight:'',
@@ -162,6 +163,10 @@ class App extends Component {
     });
   };
 
+  changeLocation = (location) => {
+    this.setState({selectedLocation: location});
+  }
+
 
   render(){
     return (
@@ -170,7 +175,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/'>
             {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations}/>
+            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
@@ -213,6 +218,13 @@ class App extends Component {
             <Route path='/editDog'>
             {this.state.loggedIn ?
             <EditDog handleLogout={this.handleLogout} user={this.state.user} setUser={this.setUser} chosenDog={this.state.chosenDog}/>
+            :
+            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
+            }
+            </Route>
+            <Route path='/FortFunston'>
+            {this.state.loggedIn?
+            <UpcomingTrips handleLogout={this.handleLogout} user={this.state.user} allTrips={this.state.trips} location={this.state.Selectedlocation}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }

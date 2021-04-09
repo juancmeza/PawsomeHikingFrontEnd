@@ -16,9 +16,11 @@ class TripLocations extends Component {
               <br></br>
               <h2> Trip Locations </h2>
               <br></br>
-              <Row>
-                {this.showLocations(this.props.locations)}
-              </Row>
+              <div className="Locations-row">
+                <Row>
+                  {this.showLocations(this.props.locations)}
+                </Row>
+              </div>
               <br></br>
               <br></br>
             </div>

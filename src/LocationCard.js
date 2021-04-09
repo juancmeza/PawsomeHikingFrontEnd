@@ -2,14 +2,12 @@ import React from 'react';
 import NoSsr from '@material-ui/core/NoSsr';
 import GoogleFontLoader from 'react-google-font-loader';
 import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { Row, Item } from '@mui-treasury/components/flex';
-import { Info, InfoSubtitle, InfoTitle } from '@mui-treasury/components/info';
-import { useNewsInfoStyles } from '@mui-treasury/styles/info/news';
+import { Row} from '@mui-treasury/components/flex';
+import { Info } from '@mui-treasury/components/info';
 import { useCoverCardMediaStyles } from '@mui-treasury/styles/cardMedia/cover';
 
 const getPicture = (tripLocation) => {
@@ -34,7 +32,7 @@ const useStyles = makeStyles(() => ({
     position: 'relative',
     boxShadow: '0 8px 24px 0 rgba(0,0,0,0.12)',
     overflow: 'visible',
-    borderRadius: '1.5rem',
+    borderRadius: '1rem',
     transition: '0.4s',
     '&:hover': {
       transform: 'translateY(-2px)',
@@ -53,14 +51,14 @@ const useStyles = makeStyles(() => ({
       width: '100%',
       bottom: -1,
       height: '100%',
-      borderRadius: '1.5rem',
+      borderRadius: '1rem',
       // backgroundColor: 'rgba(0,0,0,0.08)',
     },
   },
   main: {
     overflow: 'hidden',
-    borderTopLeftRadius: '1.5rem',
-    borderTopRightRadius: '1.5rem',
+    borderTopLeftRadius: '1rem',
+    borderTopRightRadius: '1rem',
     zIndex: 1,
     '&:after': {
       content: '""',
@@ -89,8 +87,8 @@ const useStyles = makeStyles(() => ({
   author: {
     zIndex: 1,
     position: 'relative',
-    borderBottomLeftRadius: '1.5rem',
-    borderBottomRightRadius: '1.5rem',
+    borderBottomLeftRadius: '1rem',
+    borderBottomRightRadius: '1rem',
     background: 'linear-gradient(to top, #032733, #416e7c)',
 
   },
@@ -101,7 +99,7 @@ const useStyles = makeStyles(() => ({
     width: '88%',
     height: '100%',
     bottom: 0,
-    borderRadius: '1.5rem',
+    borderRadius: '1rem',
     backgroundColor: 'rgba(0,0,0,0.06)',
     left: '50%',
     transform: 'translateX(-50%)',
@@ -139,7 +137,7 @@ export const LocationCard = React.memo(function LocationCard({location}) {
           bgcolor={'common.white'}
         >
           <Info position={'middle'} variant={'h2'} className={styles.title}>
-            <Typography position={'middle'}>{location}</Typography>
+            <Typography position={'middle'} variant={'h6'}>{location}</Typography>
           </Info>
         </Row>
         <div className={styles.shadow} />
