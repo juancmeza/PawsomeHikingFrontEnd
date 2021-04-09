@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import LocationCard from './LocationCard'
+import {Col, Row} from 'react-bootstrap'
 
 class TripLocations extends Component {
 
   showLocations = (locations) => {
     return locations.map(location => {
-      return <LocationCard location={location}/>
+      return <Col><LocationCard location={location}/></Col>
     })
   }
 
@@ -15,9 +16,9 @@ class TripLocations extends Component {
               <br></br>
               <h2> Trip Locations </h2>
               <br></br>
-              <div className='Locations'>
+              <Row>
                 {this.showLocations(this.props.locations)}
-              </div>
+              </Row>
               <br></br>
               <br></br>
             </div>

@@ -54,7 +54,7 @@ const useStyles = makeStyles(() => ({
       bottom: -1,
       height: '100%',
       borderRadius: '1.5rem',
-      backgroundColor: 'rgba(0,0,0,0.08)',
+      // backgroundColor: 'rgba(0,0,0,0.08)',
     },
   },
   main: {
@@ -69,7 +69,7 @@ const useStyles = makeStyles(() => ({
       display: 'block',
       width: '100%',
       height: '100%',
-      background: 'linear-gradient(to top, #014a7d, rgba(0,0,0,0))',
+      // background: 'linear-gradient(to top, #014a7d, rgba(0,0,0,0))',
     },
   },
   content: {
@@ -79,30 +79,20 @@ const useStyles = makeStyles(() => ({
     zIndex: 1,
     padding: '1.5rem 1.5rem 1rem',
   },
-  avatar: {
-    width: 48,
-    height: 48,
-  },
-  tag: {
-    display: 'inline-block',
-    fontFamily: "'Sen', sans-serif",
-    backgroundColor: '#ff5dac',
-    borderRadius: '0.5rem',
-    padding: '2px 0.5rem',
-    color: '#fff',
-    marginBottom: '0.5rem',
-  },
+
   title: {
     fontFamily: "'Sen', sans-serif",
     fontSize: '2rem',
     fontWeight: 800,
-    color: '#fff',
+    color: '#80b5c1',
   },
   author: {
     zIndex: 1,
     position: 'relative',
     borderBottomLeftRadius: '1.5rem',
     borderBottomRightRadius: '1.5rem',
+    background: 'linear-gradient(to top, #032733, #416e7c)',
+
   },
   shadow: {
     transition: '0.2s',
@@ -139,12 +129,6 @@ export const LocationCard = React.memo(function LocationCard({location}) {
               getPicture(location)
             }
           />
-          <div className={styles.content}>
-            <div className={styles.tag}>Fashion</div>
-            <Typography variant={'h2'} className={styles.title}>
-              Diana Marvel Has a City Take on the Cowboy Boot
-            </Typography>
-          </div>
         </Box>
         <Row
           className={styles.author}
@@ -154,15 +138,8 @@ export const LocationCard = React.memo(function LocationCard({location}) {
           gap={2}
           bgcolor={'common.white'}
         >
-          <Item>
-            <Avatar
-              className={styles.avatar}
-              src={'https://i.pravatar.cc/300?img=13'}
-            />
-          </Item>
-          <Info position={'middle'} useStyles={useNewsInfoStyles}>
-            <InfoTitle>Nadine Petrolli</InfoTitle>
-            <InfoSubtitle>Jul 20 | 2 Min Read</InfoSubtitle>
+          <Info position={'middle'} variant={'h2'} className={styles.title}>
+            <Typography position={'middle'}>{location}</Typography>
           </Info>
         </Row>
         <div className={styles.shadow} />
