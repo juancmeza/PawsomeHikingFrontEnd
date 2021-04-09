@@ -12,9 +12,25 @@ import { Info, InfoSubtitle, InfoTitle } from '@mui-treasury/components/info';
 import { useNewsInfoStyles } from '@mui-treasury/styles/info/news';
 import { useCoverCardMediaStyles } from '@mui-treasury/styles/cardMedia/cover';
 
+const getPicture = (tripLocation) => {
+  switch(tripLocation){
+    case 'Fort Funston':
+      return 'http://www.san-francisco-travel-secrets.com/images/fort-funston-trails.jpg'
+    case 'Stern Grove':
+      return 'https://i.pinimg.com/originals/89/94/ea/8994eaf9b1f80e21c9f44e544998f714.jpg'
+    case "Marshall's Beach":
+      return 'https://ucarecdn.com/067bb93b-221c-4d23-ae61-26ba7ced96fb/-/resize/1000x/-/format/auto/-/progressive/yes/-/quality/lightest/'
+    case "Lands End":
+      return 'https://greatruns.com/wp-content/uploads/2016/11/SanFran3.jpg' 
+    default:
+      return 'http://www.san-francisco-travel-secrets.com/images/fort-funston-beach-and-dogs.jpg'
+
+  }
+}
+
 const useStyles = makeStyles(() => ({
   card: {
-    minWidth: 320,
+    minWidth: 280,
     position: 'relative',
     boxShadow: '0 8px 24px 0 rgba(0,0,0,0.12)',
     overflow: 'visible',
@@ -107,7 +123,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const LocationCard = React.memo(function LocationCard() {
+export const LocationCard = React.memo(function LocationCard({location}) {
   const styles = useStyles();
   const mediaStyles = useCoverCardMediaStyles();
   return (
@@ -116,11 +132,11 @@ export const LocationCard = React.memo(function LocationCard() {
         <GoogleFontLoader fonts={[{ font: 'Sen', weights: [400, 800] }]} />
       </NoSsr>
       <Card className={styles.card}>
-        <Box className={styles.main} minHeight={300} position={'relative'}>
+        <Box className={styles.main} minHeight={350} position={'relative'}>
           <CardMedia
             classes={mediaStyles}
             image={
-              'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80'
+              getPicture(location)
             }
           />
           <div className={styles.content}>

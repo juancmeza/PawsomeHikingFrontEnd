@@ -5,29 +5,21 @@ class TripLocations extends Component {
 
   showLocations = (locations) => {
     return locations.map(location => {
-      return <LocationCard/>
+      return <LocationCard location={location}/>
     })
   }
 
     render(){
         return(
-            <div className='Locations'>
+            <div>
+              <br></br>
               <h2> Trip Locations </h2>
-              <div>
+              <br></br>
+              <div className='Locations'>
                 {this.showLocations(this.props.locations)}
-                <div className='Funston'>
-                  Fort Funston
-                </div>
-                <div className='Sigmund'>
-                  Sigmund Stern Recreation Grove
-                </div>
-                <div className="Marshall's Beach">
-                  Marshall's Beach
-                </div>
-                <div className="Lands End">
-                  Lands End
-                </div>
               </div>
+              <br></br>
+              <br></br>
             </div>
         )
     }
