@@ -6,6 +6,10 @@ import Paws from './Paws.js'
 
 class UpcomingTrips extends Component {
 
+  // componentDidMount(){
+  //   this.props.changeLocation('All')
+  // }
+
     render(){
         return(
           <div className='MainComponents'>
@@ -13,7 +17,7 @@ class UpcomingTrips extends Component {
             <br></br>
             <Paws />
             <div>
-                <Trips user={this.props.user} trips={this.props.allTrips} userTripsOnly={false} selectTrip={this.props.selectTrip}/>
+                <Trips user={this.props.user} trips={this.props.allTrips} userTripsOnly={false} selectTrip={this.props.selectTrip} changeLocation={this.props.changeLocation} selectedLocation={this.props.selectedLocation}/>
             </div>
             <Paws />
             <Paws />

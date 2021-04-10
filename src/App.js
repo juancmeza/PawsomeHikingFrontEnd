@@ -182,7 +182,7 @@ class App extends Component {
             </Route>
             <Route path='/upcomingTrips'>
             {this.state.loggedIn?
-            <UpcomingTrips handleLogout={this.handleLogout} allTrips={this.state.trips} user={this.state.user} chosenTrip={this.state.selectedTrip} selectTrip={this.selectTrip}/>
+            <UpcomingTrips handleLogout={this.handleLogout} allTrips={this.state.trips} user={this.state.user} chosenTrip={this.state.selectedTrip} selectTrip={this.selectTrip} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
@@ -224,7 +224,7 @@ class App extends Component {
             </Route>
             <Route path='/FortFunston'>
             {this.state.loggedIn?
-            <UpcomingTrips handleLogout={this.handleLogout} user={this.state.user} allTrips={this.state.trips} location={this.state.Selectedlocation}/>
+            <UpcomingTrips handleLogout={this.handleLogout} user={this.state.user} allTrips={this.state.trips} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
