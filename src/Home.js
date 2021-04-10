@@ -24,7 +24,7 @@ class Home extends Component {
 
         return(
             <div className='Home'>
-                <Nav handleLogout={this.props.handleLogout}/>
+                <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation} selectedLocation={this.props.selectedLocation}/>
                 {/* <Paws /> */}
                 <div className='Landing'>
                   <br></br>

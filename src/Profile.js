@@ -8,9 +8,9 @@ class Profile extends Component {
     render(){
         return(
             <div justify='center'>
-                <Nav handleLogout={this.props.handleLogout}/>
+                <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation} selectedLocation={this.props.selectedLocation}/>
                 {/* <br></br> */}
-                <ProfileTab user={this.props.user} selectTrip={this.props.selectTrip} selectDog={this.props.selectDog}/>
+                <ProfileTab user={this.props.user} selectTrip={this.props.selectTrip} selectDog={this.props.selectDog} changeLocation={this.props.changeLocation} selectedLocation={this.props.selectedLocation}/>
                 <br></br>
             </div>
         )

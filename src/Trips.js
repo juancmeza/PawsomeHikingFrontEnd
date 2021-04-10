@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
-import Nav from './Nav';
 import { Container, Row, Col, Button, Form, Alert, Card} from "react-bootstrap"
-import SimpleReactCalendar from 'simple-react-calendar'
-import BookTrip from './BookTrip.js'
 import { Link } from 'react-router-dom';
 
 

@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProfileTab({user, selectTrip, selectDog}) {
+export default function ProfileTab({user, selectTrip, selectDog, changeLocation, selectedLocation}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -90,7 +90,7 @@ export default function ProfileTab({user, selectTrip, selectDog}) {
         <TabPanel value={value} index={1}>
           <Paws />
           {user.trips.length > 0 ?
-                <Trips user={user} trips={user.trips} userTripsOnly={true} selectTrip={selectTrip}/> :
+                <Trips user={user} trips={user.trips} userTripsOnly={true} selectTrip={selectTrip} changeLocation={changeLocation} selectedLocation={selectedLocation}/> :
                 <div>
               <h6>You don't have any scheduled trips</h6>
               <div>{console.log(user)}</div>
