@@ -37,7 +37,7 @@ class Trips extends Component {
   }
 
   selectTrips = (locations) => {
-    if (locations === 'All'){
+    if (this.state.selectedLocation === 'All'){
       return this.props.trips
     }
 
@@ -84,7 +84,7 @@ class Trips extends Component {
             <div>
               {this.state.bookTrip ?
                 <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user}/> :
-                this.showTrips(this.selectTrips(this.props.selectedLocation))
+                this.showTrips(this.selectTrips(this.props.trips))
               }
             </div>
           </div>
