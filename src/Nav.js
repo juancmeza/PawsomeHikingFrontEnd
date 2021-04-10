@@ -9,6 +9,7 @@ import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined'
 
 class Nav extends Component {
   render() {
+    console.log(this.props)
     return(
       <nav className="navbar">
         <div>
@@ -20,10 +21,12 @@ class Nav extends Component {
             <HomeOutlinedIcon className='Icons'/>
             <h5 className='Desk-view'> Home </h5>
           </Link>
-          <Link to="/upcomingTrips">
-            <FilterHdrOutlinedIcon className="Icons"/>
-            <h5 className='Desk-view'> Upcoming Trips </h5>
-          </Link>
+          <div onClick={() => this.props.changeLocation('All')}>
+            <Link to="/upcomingTrips">
+              <FilterHdrOutlinedIcon className="Icons"/>
+              <h5 className='Desk-view'> Upcoming Trips </h5>
+            </Link>
+          </div>
           {/* <Link to="/friends">
             <h5 className = "text-white nav-text"> Friends </h5>
           </Link> */}
