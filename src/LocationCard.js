@@ -115,7 +115,7 @@ export const LocationCard = React.memo(function LocationCard({location, changeLo
   const styles = useStyles();
   const mediaStyles = useCoverCardMediaStyles();
   return (
-    <div onClick={changeLocation(location)}>
+    <div onClick={() => changeLocation(location)}>
       <NoSsr>
         <GoogleFontLoader fonts={[{ font: 'Sen', weights: [400, 800] }]} />
       </NoSsr>
