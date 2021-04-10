@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import LocationCard from './LocationCard'
 import {Col, Row} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 class TripLocations extends Component {
 
   showLocations = (locations) => {
     return locations.map(location => {
-      return <Col><LocationCard location={location}/></Col>
+      return <Col><Link to='/UpcomingTrips'><LocationCard location={location} changeLocation={this.props.changeLocation}/></Link></Col>
     })
   }
 

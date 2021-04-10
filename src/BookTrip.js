@@ -68,7 +68,7 @@ class BookTrip extends Component {
     }
 
     render(){
-      const {location, date, time} = this.props.chosenTrip
+      // const {location, date, time} = this.props.chosenTrip
 
         return(
             <div>

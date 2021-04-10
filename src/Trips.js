@@ -36,6 +36,14 @@ class Trips extends Component {
 
   }
 
+  selectTrips = (locations) => {
+    if (locations === 'All'){
+      return this.props.trips
+    }
+
+    return locations.filter(trip => trip.location === this.props.selectedLocation)
+  }
+
   showTrips = (trips) => {
 
     let uniqueTrips = [...new Set(trips)]
@@ -72,16 +80,11 @@ class Trips extends Component {
     render(){
         return(
           <div>
-            <Row>
-              <Col>
-                  {/* <SimpleReactCalendar trips={this.props.trips}/> */}
-              </Col>
-            </Row>
             <br></br>
             <div>
               {this.state.bookTrip ?
                 <BookTrip chosenTrip={this.props.chosenTrip} user={this.props.user}/> :
-                this.showTrips(this.props.trips)
+                this.showTrips(this.selectTrips(this.props.selectedLocation))
               }
             </div>
           </div>

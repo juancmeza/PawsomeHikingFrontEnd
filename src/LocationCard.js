@@ -111,11 +111,11 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const LocationCard = React.memo(function LocationCard({location}) {
+export const LocationCard = React.memo(function LocationCard({location, changeLocation}) {
   const styles = useStyles();
   const mediaStyles = useCoverCardMediaStyles();
   return (
-    <>
+    <div onClick={changeLocation(location)}>
       <NoSsr>
         <GoogleFontLoader fonts={[{ font: 'Sen', weights: [400, 800] }]} />
       </NoSsr>
@@ -143,7 +143,7 @@ export const LocationCard = React.memo(function LocationCard({location}) {
         <div className={styles.shadow} />
         <div className={`${styles.shadow} ${styles.shadow2}`} />
       </Card>
-    </>
+    </div>
   );
 });
 export default LocationCard
