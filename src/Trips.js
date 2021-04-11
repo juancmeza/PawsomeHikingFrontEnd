@@ -2,6 +2,15 @@ import React, {Component} from 'react';
 import { Container, Row, Col, Button, Form, Alert, Card} from "react-bootstrap"
 import { Link } from 'react-router-dom';
 
+// import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
 
 class Trips extends Component {
 
@@ -51,21 +60,21 @@ class Trips extends Component {
     return uniqueTrips.map(trip => {
       const {id, date, location, time} = trip
       return (
-      <Row>
-        <Col>{this.formatDate(date)}</Col>
-        <Col>{location}</Col>
-        <Col>{this.formatTime(time)}</Col>
-        <Col>
+      <TableRow>
+        <TableCell>{this.formatDate(date)}</TableCell>
+        <TableCell>{location}</TableCell>
+        <TableCell>{this.formatTime(time)}</TableCell>
+        <TableCell>
           <div>
               {this.props.userTripsOnly ?
-              <Col><Button id={id} variant='outline-info'>Cancel</Button></Col> :
+              <Button id={id} variant='outline-info'>Cancel</Button> :
               tripIds.includes(id) ?
-              <Col><Button id={id} variant='outline-info'>Cancel</Button></Col> :
-              <Col><Link to ='bookTrip'><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Link></Col>
+              <Button id={id} variant='outline-info'>Cancel</Button> :
+              <Link to ='bookTrip'><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Link>
               }
           </div>
-        </Col>
-      </Row>
+        </TableCell>
+      </TableRow>
       )
     })
   }
@@ -79,9 +88,21 @@ class Trips extends Component {
         return(
           <div>
             <br></br>
-            <div>
-                {this.showTrips(this.selectTrips(this.props.trips))}
-            </div>
+            <TableContainer component={Paper}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Date</TableCell>
+                    <TableCell align="right">Location</TableCell>
+                    <TableCell align="right">Time</TableCell>
+                    <TableCell align="right"></TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {this.showTrips(this.selectTrips(this.props.trips))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </div>
         )
     }
