@@ -10,46 +10,40 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    maxWidth: 650,
+    background: 'transparent',
   },
+
+  text: {
+    color: '#80b5c1'
+  }
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-];
-
-export default function AcccessibleTable() {
+export default function AcccessibleTable({trips}) {
   const classes = useStyles();
 
+
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="caption table">
-        <caption>A basic table example with a caption</caption>
+    <TableContainer component={Paper} className={classes.table}>
+      <Table className={classes.text} aria-label="caption table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell className={classes.text}>Date</TableCell>
+            <TableCell align="right" className={classes.text}>Location</TableCell>
+            <TableCell align="right" className={classes.text}>Time</TableCell>
+            <TableCell align="right" className={classes.text}></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
+          {trips.map((trip) => (
+            <TableRow key={trip.date}>
+              <TableCell className={classes.text}>
+                {trip.date}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right" className={classes.text}>{trip.location}</TableCell>
+              <TableCell align="right" className={classes.text}>{trip.time}</TableCell>
+              <TableCell align="right" className={classes.text}>Button</TableCell>
             </TableRow>
           ))}
         </TableBody>

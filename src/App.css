@@ -101,8 +101,12 @@ nav {
   justify-content: center;
 }
 
-.Trip-row {
-  border-style: groove;
+.Trip-table {
+  /* border-style: groove;
   border-color: #80b5c1;
-  border-radius: 5px;
+  border-radius: 5px; */
+  /* box-shadow: 0 5px 10px rgb(42, 41, 41); */
+  display: flex;
+  justify-content: center;
+  color: #80b5c1;
 }
