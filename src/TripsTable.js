@@ -47,7 +47,7 @@ const formatTime = (inputTime) => {
 }
 
 
-export default function AcccessibleTable({trips, userTripsOnly, user}) {
+export default function AcccessibleTable({trips, userTripsOnly, user, selectTrip}) {
   
   const classes = useStyles();
 
@@ -69,14 +69,14 @@ export default function AcccessibleTable({trips, userTripsOnly, user}) {
                 <Button id={id} variant='outline-info'>Cancel</Button> :
                 tripIds.includes(id) ?
                 <Button id={id} variant='outline-info'>Cancel</Button> :
-                <Link to ='bookTrip'><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Link>
+                <Link to ='bookTrip'><Button id={id} variant='outline-info' onClick={() => selectTrip(id)}>Book Trip!</Button></Link>
                 }
           </TableCell>
       </TableRow>
       )
     })
   }
-  
+
 
   return (
     <TableContainer component={Paper} className={classes.table}>

@@ -73,7 +73,7 @@ class BookTrip extends Component {
         return(
             <div>
                 <div>
-                  <Nav handleLogout={this.props.handleLogout}/>
+                  <Nav handleLogout={this.props.handleLogout} changeLocation={this.changeLocation}/>
                   <br></br>
                   <Paws />
                 </div>

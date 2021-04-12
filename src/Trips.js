@@ -51,6 +51,7 @@ class Trips extends Component {
                     trips={this.selectTrips(this.props.trips)}
                     userTripsOnly={this.props.userTripsOnly}
                     user={this.props.user}
+                    selectTrip={this.props.selectTrip}
                 >
                 </TripsTable>
             </div>

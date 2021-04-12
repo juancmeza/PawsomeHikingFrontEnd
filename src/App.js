@@ -210,7 +210,7 @@ class App extends Component {
             </Route>
             <Route path='/bookTrip'>
             {this.state.loggedIn ?
-            <BookTrip handleLogout={this.handleLogout} user={this.state.user} chosenTrip={this.state.selectedTrip} setUser={this.setUser}/>
+            <BookTrip handleLogout={this.handleLogout} user={this.state.user} chosenTrip={this.state.selectedTrip} setUser={this.setUser} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
