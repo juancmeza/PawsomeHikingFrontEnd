@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap'
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -19,6 +20,29 @@ const useStyles = makeStyles({
   }
 });
 
+const formatDate = (inputDate) => {
+  var date = new Date(inputDate);
+    if (!isNaN(date.getTime())) {
+      // Months use 0 index.
+      return (
+        date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear()
+      );
+    }
+}
+
+const formatTime = (inputTime) => {
+
+  const options = {
+    timeZone:"Canada/Central",
+    hour12 : true,
+    hour:  "numeric",
+    minute: "numeric",seconds:"numeric"
+ }
+
+ return new Date(inputTime).toLocaleTimeString("en-US",options)
+
+}
+
 
 export default function AcccessibleTable({trips}) {
   const classes = useStyles();
@@ -30,20 +54,20 @@ export default function AcccessibleTable({trips}) {
         <TableHead>
           <TableRow>
             <TableCell className={classes.text}>Date</TableCell>
-            <TableCell align="right" className={classes.text}>Location</TableCell>
-            <TableCell align="right" className={classes.text}>Time</TableCell>
-            <TableCell align="right" className={classes.text}></TableCell>
+            <TableCell align="left" className={classes.text}>Location</TableCell>
+            <TableCell align="left" className={classes.text}>Time</TableCell>
+            <TableCell align="left" className={classes.text}></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {trips.map((trip) => (
             <TableRow key={trip.date}>
               <TableCell className={classes.text}>
-                {trip.date}
+                {formatDate(trip.date)}
               </TableCell>
-              <TableCell align="right" className={classes.text}>{trip.location}</TableCell>
-              <TableCell align="right" className={classes.text}>{trip.time}</TableCell>
-              <TableCell align="right" className={classes.text}>Button</TableCell>
+              <TableCell align="left" className={classes.text}>{trip.location}</TableCell>
+              <TableCell align="left" className={classes.text}>{formatTime(trip.time)}</TableCell>
+              <TableCell align="left" className={classes.text}>Button</TableCell>
             </TableRow>
           ))}
         </TableBody>

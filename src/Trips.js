@@ -71,62 +71,18 @@ class Trips extends Component {
     })
   }
 
-  showTable = (trips) => {
-
-    let uniqueTrips = [...new Set(trips)]
-    
-
-    let tripIds = this.props.user.trips.map(trip => trip.id)
-    return uniqueTrips.map(trip => {
-      const {id, date, location, time} = trip
-      return (
-      <tr>
-          <th><div className="Trip-row">{this.formatDate(date)}</div></th>
-          <th><div className="Trip-row">{location}</div></th>
-          <th><div className="Trip-row">{this.formatTime(time)}</div></th>
-          <th>
-            <div className="Trip-row">
-                {this.props.userTripsOnly ?
-                <th><Button id={id} variant='outline-info'>Cancel</Button></th> :
-                tripIds.includes(id) ?
-                <th><Button id={id} variant='outline-info'>Cancel</Button></th> :
-                <th><Link to ='bookTrip'><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Link></th>
-                }
-            </div>
-          </th>
-      </tr>
-      )
-    })
-  }
-
-  renderBookTrip = (id) => {
-    this.props.selectTrip(id)
-    this.setState({bookTrip: true})
-  } 
 
     render(){
         return(
           <div>
             <br></br>
-            <div>
-                {this.showTrips(this.selectTrips(this.props.trips))}
-            </div>
-            <div >
-                <table className="Trip-table">
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Location</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.showTable(this.selectTrips(this.props.trips))}
-                  </tbody>
-                </table>
-            </div>
             <div className="Trip-table">
-                <TripsTable trips={this.selectTrips(this.props.trips)}></TripsTable>
+                <TripsTable 
+                    trips={this.selectTrips(this.props.trips)}
+                    formatDate={this.formatDate}
+                    format
+                >
+                </TripsTable>
             </div>
           </div>
         )
