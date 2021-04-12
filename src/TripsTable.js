@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from 'react-bootstrap'
+import { Link } from 'react-router-dom';
+import {Button} from 'react-bootstrap'
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -13,6 +14,8 @@ const useStyles = makeStyles({
   table: {
     maxWidth: 650,
     background: 'transparent',
+    boxShadow: '0 8px 24px 0 rgba(0.12,0.1,0.1,0)',
+    borderColor: '#80b5c1'
   },
 
   text: {
@@ -44,9 +47,36 @@ const formatTime = (inputTime) => {
 }
 
 
-export default function AcccessibleTable({trips}) {
+export default function AcccessibleTable({trips, userTripsOnly, user}) {
+  
   const classes = useStyles();
 
+  const showTrips = (trips) => {
+
+    let uniqueTrips = [...new Set(trips)]
+      
+    let tripIds = user.trips.map(trip => trip.id)
+    
+    return uniqueTrips.map(trip => {
+      const {id, date, location, time} = trip
+      return (
+      <TableRow>
+          <TableCell className={classes.text}>{formatDate(date)}</TableCell>
+          <TableCell align="left" className={classes.text}>{location}</TableCell>
+          <TableCell align="left" className={classes.text}>{formatTime(time)}</TableCell>
+          <TableCell>
+                {userTripsOnly ?
+                <Button id={id} variant='outline-info'>Cancel</Button> :
+                tripIds.includes(id) ?
+                <Button id={id} variant='outline-info'>Cancel</Button> :
+                <Link to ='bookTrip'><Button id={id} variant='outline-info' onClick={() => this.renderBookTrip(id)}>Book Trip!</Button></Link>
+                }
+          </TableCell>
+      </TableRow>
+      )
+    })
+  }
+  
 
   return (
     <TableContainer component={Paper} className={classes.table}>
@@ -60,16 +90,7 @@ export default function AcccessibleTable({trips}) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {trips.map((trip) => (
-            <TableRow key={trip.date}>
-              <TableCell className={classes.text}>
-                {formatDate(trip.date)}
-              </TableCell>
-              <TableCell align="left" className={classes.text}>{trip.location}</TableCell>
-              <TableCell align="left" className={classes.text}>{formatTime(trip.time)}</TableCell>
-              <TableCell align="left" className={classes.text}>Button</TableCell>
-            </TableRow>
-          ))}
+          {showTrips(trips)}
         </TableBody>
       </Table>
     </TableContainer>
