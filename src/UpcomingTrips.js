@@ -13,6 +13,7 @@ class UpcomingTrips extends Component {
     render(){
         return(
           <div className='MainComponents'>
+            {window.scrollTo(0,0)}
             <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation}/>
             <br></br>
             <Paws />

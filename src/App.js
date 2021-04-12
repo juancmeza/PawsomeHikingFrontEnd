@@ -167,6 +167,10 @@ class App extends Component {
     this.setState({selectedLocation: location});
   }
 
+  scrollFakeLink = (yCoordinate) => {
+    window.scrollTo(0,yCoordinate)
+  }
+
 
   render(){
     return (
@@ -225,6 +229,13 @@ class App extends Component {
             <Route path='/FortFunston'>
             {this.state.loggedIn?
             <UpcomingTrips handleLogout={this.handleLogout} user={this.state.user} allTrips={this.state.trips} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation}/>
+            :
+            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
+            }
+            </Route>
+            <Route exact path='/about'>
+            {this.state.loggedIn?
+            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} scrollFakeLink={this.scrollFakeLink} y-coordinate={1100}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }

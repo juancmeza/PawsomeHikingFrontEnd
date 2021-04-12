@@ -72,6 +72,7 @@ class BookTrip extends Component {
 
         return(
             <div>
+              {window.scrollTo(0,0)}
                 <div>
                   <Nav handleLogout={this.props.handleLogout} changeLocation={this.changeLocation}/>
                   <br></br>
