@@ -167,10 +167,6 @@ class App extends Component {
     this.setState({selectedLocation: location});
   }
 
-  scrollFakeLink = (yCoordinate) => {
-    window.scrollTo(0,yCoordinate)
-  }
-
 
   render(){
     return (
@@ -179,7 +175,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/'>
             {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation}/>
+            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} yCoordinate={0}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
@@ -235,7 +231,7 @@ class App extends Component {
             </Route>
             <Route exact path='/about'>
             {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} scrollFakeLink={this.scrollFakeLink} y-coordinate={1100}/>
+            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} yCoordinate={750}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }

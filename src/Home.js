@@ -11,10 +11,6 @@ import TripLocations from './TripLocations';
 
 class Home extends Component {
 
-  // componentDidMount() {
-  //   this.setState({booking: false})
-  // }
-
   // toggleBooking = () => {
   //   const update = !this.state.booking
   //   this.setState({booking: update})
@@ -24,14 +20,14 @@ class Home extends Component {
 
         return(
             <div className='Home'>
+                {window.scrollTo(0,this.props.yCoordinate)}
                 <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation} selectedLocation={this.props.selectedLocation}/>
-                {/* <Paws /> */}
                 <div className='Landing'>
                   <br></br>
                   <div >
                     <Row>
                       <Col>
-                          <Link to='/bookTrip'><Button variant='outline-info'>Book a Trip!</Button></Link>
+                          <Link to='/upcomingTrips'><Button variant='outline-info' onClick={() => this.props.changeLocation('All')}>Book a Trip!</Button></Link>
                       </Col>
                     </Row>
                   </div>

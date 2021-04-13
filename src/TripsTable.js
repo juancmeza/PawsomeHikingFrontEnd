@@ -64,7 +64,7 @@ export default function AcccessibleTable({trips, userTripsOnly, user, selectTrip
           <TableCell className={classes.text}>{formatDate(date)}</TableCell>
           <TableCell align="left" className={classes.text}>{location}</TableCell>
           <TableCell align="left" className={classes.text}>{formatTime(time)}</TableCell>
-          <TableCell>
+          <TableCell allign='right'>
                 {userTripsOnly ?
                 <Button id={id} variant='outline-info'>Cancel</Button> :
                 tripIds.includes(id) ?

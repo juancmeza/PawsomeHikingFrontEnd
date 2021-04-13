@@ -18,7 +18,7 @@ class Nav extends Component {
         </div>
         <div className ="NavStuff">
           <Link to="/about">
-            <h5 className='Desk-view'> About </h5>
+            <h5 className='Icons'> About </h5>
           </Link>
           <Link to="/">
             <HomeOutlinedIcon className='Icons'/>

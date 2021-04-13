@@ -74,7 +74,7 @@ class BookTrip extends Component {
             <div>
               {window.scrollTo(0,0)}
                 <div>
-                  <Nav handleLogout={this.props.handleLogout} changeLocation={this.changeLocation}/>
+                  <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation}/>
                   <br></br>
                   <Paws />
                 </div>
