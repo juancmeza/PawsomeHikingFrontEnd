@@ -24,7 +24,9 @@ const mapLocation = {
 class BookTrip extends Component {
 
   state = {
-    selectedDogs: []
+    selectedDogs: [],
+    pickUp: false,
+    scrollToTop: true
   }
 
     updateSelectedDogs = (dog) => {
@@ -77,15 +79,10 @@ class BookTrip extends Component {
                   <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation}/>
                   <br></br>
                   <Paws />
+                  <Paws />
+                  <Paws />
+                  <Paws />
                 </div>
-                <Row>
-                  <Col></Col>
-                  <Col>
-                    <TripCard trip={this.props.chosenTrip} /> 
-                  </Col>
-                  <Col></Col>
-                </Row>
-                <br></br>
                 <Row>
                   <Col>
                     <h5>Select dog(s) going on this trip:</h5>
@@ -112,6 +109,14 @@ class BookTrip extends Component {
                   </Col>
                 </Row>
                 <Paws />
+                <Row>
+                  <Col></Col>
+                  <Col>
+                    <TripCard trip={this.props.chosenTrip} /> 
+                  </Col>
+                  <Col></Col>
+                </Row>
+                <br></br>
                 {this.props.user.dogs.length > 0 ?
                 <div>
                   <Row>
@@ -121,7 +126,7 @@ class BookTrip extends Component {
                   </Row>
                   <Row>
                     <Col>
-                      <Map location={mapLocation} zoomLevel={12.9}/> :
+                      <Map location={mapLocation} zoomLevel={12.9}/>
                     </Col>
                     <br></br>
                   </Row>

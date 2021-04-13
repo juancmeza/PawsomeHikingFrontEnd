@@ -17,7 +17,15 @@ class About extends Component {
             <div className='About'>
                 {window.scrollTo(0,this.props.yCoordinate)}
                 <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation} selectedLocation={this.props.selectedLocation}/>
-                <div className=''>
+                <div className="Intro">
+                <br></br>
+                <br></br>
+                  <IntroCard></IntroCard>
+                </div>
+                <div>
+                  <TripLocations locations={this.props.locations} changeLocation={this.props.changeLocation}/>
+                </div>
+                <div>
                   <br></br>
                   <div >
                     <Row>
@@ -26,15 +34,6 @@ class About extends Component {
                       </Col>
                     </Row>
                   </div>
-                  {/* <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} /> */}
-                </div>
-                <div className="Intro">
-                <br></br>
-                <br></br>
-                  <IntroCard></IntroCard>
-                </div>
-                <div>
-                  <TripLocations locations={this.props.locations} changeLocation={this.props.changeLocation}/>
                 </div>
             </div>
         )

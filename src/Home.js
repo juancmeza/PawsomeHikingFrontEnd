@@ -1,8 +1,8 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import Nav from './Nav';
 import IntroCard from './IntroCard.js';
-import { BrowserRouter as Router, Link} from "react-router-dom";
-import { Container, Row, Col, Button} from "react-bootstrap"
+import {Link} from "react-router-dom";
+import { Row, Col, Button} from "react-bootstrap"
 import TripLocations from './TripLocations';
 
 
@@ -26,7 +26,7 @@ class Home extends Component {
                   <div >
                     <Row>
                       <Col>
-                          <Link to='/upcomingTrips'><Button variant='outline-info' onClick={() => this.props.changeLocation('All')}>Book a Trip!</Button></Link>
+                          <Link to='/upcomingTrips'><Button variant='info' onClick={() => this.props.changeLocation('All')}>Book a Trip!</Button></Link>
                       </Col>
                     </Row>
                   </div>
