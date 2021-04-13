@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import Nav from './Nav';
-import TripDetails from './TripDetails.js'
-import Paws from './Paws.js'
+import IntroCard from './IntroCard.js';
 import { BrowserRouter as Router, Link} from "react-router-dom";
 import { Container, Row, Col, Button} from "react-bootstrap"
 import TripLocations from './TripLocations';
@@ -32,6 +31,11 @@ class Home extends Component {
                     </Row>
                   </div>
                   {/* <TripDetails chosenTrip={this.props.chosenTrip} user={this.props.user} handleLogout={this.props.handleLogout} /> */}
+                </div>
+                <div className="Intro">
+                <br></br>
+                <br></br>
+                  <IntroCard></IntroCard>
                 </div>
                 <div>
                   <TripLocations locations={this.props.locations} changeLocation={this.props.changeLocation}/>
