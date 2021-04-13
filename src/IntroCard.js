@@ -19,7 +19,8 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     maxWidth: 900,
     marginLeft: 'auto',
     overflow: 'initial',
-    background: '#ffffff',
+    background: 'linear-gradient(#032733, #416e7c)',
+    color: '#80b5c1',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -52,7 +53,6 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
       left: 0,
       width: '100%',
       height: '100%',
-      backgroundImage: 'linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)',
       borderRadius: spacing(2), // 16
       opacity: 0.5,
     },
@@ -64,6 +64,10 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     marginTop: 14,
     textTransform: 'initial',
   },
+
+  buttonStyles: {
+    background: '#032733',
+  }
 }));
 
 export const BlogCardDemo = React.memo(function BlogCard() {
@@ -78,15 +82,15 @@ export const BlogCardDemo = React.memo(function BlogCard() {
       <CardMedia
         className={styles.media}
         image={
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png'
+          'https://askforadventure.com/wp-content/uploads/2020/08/dogs-4-1536x1024.jpg.webp'
         }
       />
       <CardContent>
         <TextInfoContent
           classes={contentStyles}
           heading={'PAWsome Hiking'}
-          body={
-            'We provide your pup with more than just a walk. Wether you are going out of town and need boarding for your pup or you just need them to get that essential play time, you can be sure your pup will be happy and well taken care of.' 
+          heading={
+            'We provide your pup with more than just a walk. Wether you are going out of town and need boarding for your pup or you just need them to get that essential play time, you can be sure your pup will get plenty of time off the leash in a safe environment.' 
           }
         />
         <Button className={buttonStyles}>Read more</Button>
