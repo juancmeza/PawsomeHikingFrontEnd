@@ -9,7 +9,7 @@ import Profile from "./Profile.js";
 import BookTrip from "./BookTrip.js";
 import CreateDogProfile from './CreateDogProfile'
 import EditDog from './EditDog.js'
-
+import About from './About.js';
 import "bootstrap/dist/css/bootstrap.css";
 
 import {
@@ -231,7 +231,7 @@ class App extends Component {
             </Route>
             <Route exact path='/about'>
             {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} yCoordinate={750}/>
+            <About handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} yCoordinate={750}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
