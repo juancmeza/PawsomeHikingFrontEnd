@@ -84,10 +84,6 @@ class BookTrip extends Component {
                 <div>
                   <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation}/>
                   <br></br>
-                  <Paws />
-                  <Paws />
-                  <Paws />
-                  <Paws />
                 </div>
                 <Row>
                   <Col>
@@ -150,7 +146,6 @@ class BookTrip extends Component {
                 </Row>
                 <Paws />
             </div>
-
         )
     }
 }
