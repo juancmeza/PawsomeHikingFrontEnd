@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import Nav from './Nav';
 import { Row, Col, Button} from "react-bootstrap"
 import FormGroup from '@material-ui/core/FormGroup';
@@ -6,7 +6,6 @@ import DogCheckbox from './DogCheckbox.js';
 import Map from './Map.js'
 import TripCard from './TripCard.js'
 import Paws from './Paws.js'
-
 
 import {
     BrowserRouter as Router,
@@ -30,6 +29,9 @@ class BookTrip extends Component {
   }
 
     updateSelectedDogs = (dog) => {
+      
+      this.updateScrollToTop()
+      
       if (this.state.selectedDogs.includes(dog)){
         const removingDog = [...this.state.selectedDogs].filter(includedDog => includedDog.id !== dog.id)
         this.setState({selectedDogs: removingDog})
@@ -37,13 +39,12 @@ class BookTrip extends Component {
         const addingDog = [...this.state.selectedDogs, dog]
         this.setState({selectedDogs: addingDog})
       }
-      console.log(this.state.selectedDogs)
     }
 
     createCheckBoxes = () => {
       return (this.props.user.dogs.map(dog => {
         return (
-            <DogCheckbox user={this.props.user} dog={dog} updateSelectedDogs={() => this.updateSelectedDogs(dog)}/>
+            <DogCheckbox user={this.props.user} dog={dog} updateSelectedDogs={this.updateSelectedDogs}/>
         )
       }))
     }
@@ -69,12 +70,17 @@ class BookTrip extends Component {
         )
     }
 
+    updateScrollToTop = () => {
+      console.log('reached')
+      this.setState({scrollToTop: false})
+    }
+
     render(){
       // const {location, date, time} = this.props.chosenTrip
 
         return(
             <div>
-              {window.scrollTo(0,0)}
+              {this.state.scrollToTop ? window.scrollTo(0,0) : null}
                 <div>
                   <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation}/>
                   <br></br>
