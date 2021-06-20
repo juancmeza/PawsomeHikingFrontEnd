@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import './App.css';
 import Main from './Main.js'
-import Login from "./Login.js";
 import Home from "./Home.js";
 import UpcomingTrips from "./UpcomingTrips.js";
 import Friends from "./Friends.js";
@@ -15,13 +14,11 @@ import "bootstrap/dist/css/bootstrap.css";
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
   Switch,
 } from "react-router-dom";
 
-console.log(process.env.REACT_APP_API_KEY)
 
-const API = "http://localhost:3000";
+const API = "https://pawsome-hiking-server.herokuapp.com";
 
 class App extends Component {
 
