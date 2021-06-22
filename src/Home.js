@@ -26,7 +26,7 @@ class Home extends Component {
                   <div >
                     <Row>
                       <Col>
-                          <Link to='/upcomingTrips'><Button variant='info' onClick={() => this.props.changeLocation('All')}>Book a Trip!</Button></Link>
+                          <Link to='/bookings'><Button variant='info' onClick={() => this.props.changeLocation('All')}>Book Now!</Button></Link>
                       </Col>
                     </Row>
                   </div>

@@ -92,7 +92,7 @@ export const BlogCardDemo = React.memo(function BlogCard() {
           classes={contentStyles}
           heading={'PAWsome Hiking'}
           heading={
-            'We provide your pup with more than just a walk. Wether you are going out of town and need boarding for your pup or you just need them to get that essential play time, you can be sure your pup will get plenty of time off the leash in a safe environment.' 
+            'We provide your pup with more than just a walk. Whether you are going out of town and need boarding for your pup or you just need them to get that essential play time, you can be sure your pup will get plenty of time off the leash in a safe environment with us.' 
           }
         />
         <Link to='/about'><Button variant='outline-info'>Read more</Button></Link>

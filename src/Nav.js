@@ -25,9 +25,9 @@ class Nav extends Component {
             <h5 className='Desk-view'> Home </h5>
           </Link>
           <div onClick={() => this.props.changeLocation('All')}>
-            <Link to="/upcomingTrips">
+            <Link to="/bookings">
               <FilterHdrOutlinedIcon className="Icons"/>
-              <h5 className='Desk-view'> Upcoming Trips </h5>
+              <h5 className='Desk-view'> Bookings </h5>
             </Link>
           </div>
           {/* <Link to="/friends">
@@ -37,9 +37,9 @@ class Nav extends Component {
             <PersonOutlineOutlinedIcon className="Icons"/>
             <h5 className='Desk-view'> Profile </h5>
           </Link>
-          <div>
+          <Link to="/">
               <Button variant='light' onClick={this.props.handleLogout}>logout</Button>
-          </div>
+          </Link>
         </div>
       </nav>
     )
