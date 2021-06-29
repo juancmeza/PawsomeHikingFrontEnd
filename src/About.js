@@ -14,10 +14,10 @@ class About extends Component {
     render(){
 
         return(
-            <div className='About'>
+            <div className='MainComponents'>
                 {window.scrollTo(0,this.props.yCoordinate)}
                 <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation} selectedLocation={this.props.selectedLocation}/>
-                <div className="Intro">
+                <div className="mui-component">
                 <br></br>
                 <br></br>
                   <IntroCard></IntroCard>

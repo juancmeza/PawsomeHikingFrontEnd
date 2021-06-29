@@ -18,7 +18,7 @@ class Home extends Component {
     render(){
 
         return(
-            <div className='Home'>
+            <div className='MainComponents'>
                 {window.scrollTo(0,this.props.yCoordinate)}
                 <Nav handleLogout={this.props.handleLogout} changeLocation={this.props.changeLocation} selectedLocation={this.props.selectedLocation}/>
                 <div className='Landing'>

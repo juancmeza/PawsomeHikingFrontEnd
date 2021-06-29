@@ -25,7 +25,7 @@ class Main extends Component {
 
     render(){
         return(
-            <div className='MainComponents'>
+            <div className='Main'>
                 <br></br>
                 <div>
                   <PetsOutlinedIcon fontSize='large'/>

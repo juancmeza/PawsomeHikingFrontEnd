@@ -11,12 +11,12 @@ class Nav extends Component {
   render() {
     console.log(this.props)
     return(
-      <nav className="navbar">
-        <div>
-          <PetsOutlinedIcon />
-          <h3 className='Desk-view'>PAWsome Hiking</h3>
-        </div>
+      <nav className="nav">
         <div className ="NavStuff">
+          <div>
+            <PetsOutlinedIcon className='Icons'/>
+            <h3 className='Desk-view'>PAWsome Hiking</h3>
+          </div>
           <Link to="/about">
             <h5 className='Icons'> About </h5>
           </Link>
@@ -38,7 +38,7 @@ class Nav extends Component {
             <h5 className='Desk-view'> Profile </h5>
           </Link>
           <Link to="/">
-              <Button variant='light' onClick={this.props.handleLogout}>logout</Button>
+              <Button variant='light' onClick={this.props.handleLogout}>Logout</Button>
           </Link>
         </div>
       </nav>

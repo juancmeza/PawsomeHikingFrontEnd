@@ -31,6 +31,13 @@
 .MainComponents {
   /* background: linear-gradient(to right, #032733, #416e7c); */
   color: #80b5c1;
+  margin-top: 69px;
+  position: relative;
+  /* margin-top: 69px; */
+}
+
+.Main {
+  color: #80b5c1;
 }
 
 .Icons {
@@ -45,20 +52,23 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: -o-linear-gradient(#268397);
+  background: linear-gradient( #032733, #416e7c);
   color: #80b5c1;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   box-shadow: 0 5px 10px rgb(42, 41, 41);
-  
-
-  /* opacity: 0.5; */
+  position: fixed;
+  height: 69px;
+  width: 100%;
+  top: 0;
+  z-index:9999;
+  opacity: 0.9;
 }
 
 .navbar {
   height: 69px;
   position: fixed;
   top: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 
 }
 
@@ -68,10 +78,10 @@ nav {
   align-items: center;
   width: 70%;
   list-style: none;
-  position: fixed;
+  position: sticky;
+  overflow: hidden;
   width: 100%;
-  top: 69;
-  left: 0;
+  /* top: 69px; */
 }
 
 .Top-for-bar {
@@ -93,6 +103,11 @@ nav {
 
 .Locations-row {
   padding: 15px;
+}
+
+.mui-component {
+  margin-top: 69px;
+  position: relative;
 }
 
 @media screen and (max-width: 768px) {
@@ -118,5 +133,4 @@ nav {
   color: #80b5c1;
 }
 
-.Intro {
-}
+

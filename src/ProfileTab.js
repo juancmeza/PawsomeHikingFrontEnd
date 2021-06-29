@@ -49,7 +49,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#11181a',
+    backgroundColor: 'linear-gradient( #032733, #416e7c);',
   },
 }));
 

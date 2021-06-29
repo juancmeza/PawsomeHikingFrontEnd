@@ -80,24 +80,26 @@ export const BlogCardDemo = React.memo(function BlogCard() {
   } = useBlogTextInfoContentStyles();
   const shadowStyles = useOverShadowStyles();
   return (
-    <Card className={cx(styles.root, shadowStyles.root)}>
-      <CardMedia
-        className={styles.media}
-        image={
-          'https://askforadventure.com/wp-content/uploads/2020/08/dogs-4-1536x1024.jpg.webp'
-        }
-      />
-      <CardContent>
-        <TextInfoContent
-          classes={contentStyles}
-          heading={'PAWsome Hiking'}
-          heading={
-            'We provide your pup with more than just a walk. Whether you are going out of town and need boarding for your pup or you just need them to get that essential play time, you can be sure your pup will get plenty of time off the leash in a safe environment with us.' 
-          }
-        />
-        <Link to='/about'><Button variant='outline-info'>Read more</Button></Link>
-      </CardContent>
-    </Card>
+      <div className='mui-component'>
+        <Card className={cx(styles.root, shadowStyles.root)} >
+          <CardMedia
+            className={styles.media}
+            image={
+              'https://askforadventure.com/wp-content/uploads/2020/08/dogs-4-1536x1024.jpg.webp'
+            }
+          />
+          <CardContent>
+            <TextInfoContent
+              classes={contentStyles}
+              heading={'PAWsome Hiking'}
+              heading={
+                'We provide your pup with more than just a walk. Whether you are going out of town and need boarding for your pup or you just need them to get that essential play time, you can be sure your pup will get plenty of time off the leash in a safe environment with us.' 
+              }
+            />
+            <Link to='/about'><Button variant='outline-info'>Read more</Button></Link>
+          </CardContent>
+        </Card>
+      </div>
   );
 });
 
