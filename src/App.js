@@ -171,11 +171,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/'>
-            {this.state.loggedIn?
-            <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} yCoordinate={0}/>
-            :
-            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
-            }
+              <Home handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} yCoordinate={0}/>
             </Route>
             <Route path='/bookings'>
             {this.state.loggedIn?
@@ -187,13 +183,6 @@ class App extends Component {
             <Route path='/profile'>
             {this.state.loggedIn?
             <Profile handleLogout={this.handleLogout} user={this.state.user} selectTrip={this.selectTrip} selectDog={this.selectDog} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation}/>
-            :
-            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
-            }
-            </Route>
-            <Route path='/friends'>
-            {this.state.loggedIn?
-            <Friends handleLogout={this.handleLogout} user={this.state.user}/>
             :
             <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
             }
@@ -227,11 +216,7 @@ class App extends Component {
             }
             </Route>
             <Route exact path='/about'>
-            {this.state.loggedIn?
-            <About handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} yCoordinate={750}/>
-            :
-            <Main handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
-            }
+              <About handleLogout={this.handleLogout} chosenTrip={this.state.trips[0]} user={this.state.user} locations={this.state.locations} changeLocation={this.changeLocation} selectedLocation={this.state.selectedLocation} yCoordinate={750}/>
             </Route>
           </Switch>
         </Router>
