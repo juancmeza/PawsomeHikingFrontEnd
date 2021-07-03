@@ -1,9 +1,8 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Main from './Main.js'
 import Home from "./Home.js";
 import UpcomingTrips from "./UpcomingTrips.js";
-import Friends from "./Friends.js";
 import Profile from "./Profile.js";
 import BookTrip from "./BookTrip.js";
 import CreateDogProfile from './CreateDogProfile'
